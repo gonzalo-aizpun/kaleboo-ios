@@ -23,9 +23,8 @@
     
     KBApiAccess * apiAccess = [[KBApiAccess alloc] init];
     
-    [apiAccess fetchInitializationInformationWithSuccess:^(NSArray * a) {
-        KBHome * s = a[0];
-        for (KBState * state in s.states) {
+    [apiAccess fetchInitializationInformationWithSuccess:^(KBHome * home) {
+        for (KBState * state in home.states) {
             NSLog(@"%@ (%@)", state.stateDescription, state.stateId);
             for (KBCity * city in state.cities) {
                 NSLog(@"\t\t%@ (%@)", city.cityDescription, city.cityDescription);
@@ -34,7 +33,12 @@
                 }
             }
         }
-        NSLog(@"%@", s);
+        for (KBFilter * filter in home.filters) {
+            NSLog(@"%@ (%@)", filter.filterId, filter.filterType);
+            for (KBFilterValue * value in filter.values) {
+                NSLog(@"\t\t%@ (%@)", value.filterValueDescription, value.filterValueId);
+            }
+        }
     } withFailure:^(NSError * e) {
         NSLog(@"%@", e);
     }];

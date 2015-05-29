@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "KBHome.h"
+
 @interface KBApiAccess : NSObject
 
-- (void)fetchInitializationInformationWithSuccess:(void (^)(NSArray *))success withFailure:(void (^)(NSError *))failure;
+- (void)fetchInitializationInformationWithSuccess:(void (^)(KBHome *))success withFailure:(void (^)(NSError *))failure;
 
 @end

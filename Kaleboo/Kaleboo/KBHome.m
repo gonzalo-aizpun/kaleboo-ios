@@ -13,16 +13,12 @@
 + (RKObjectMapping *)mapping {
     
     RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[KBHome class]];
-//    [mapping addAttributeMappingsFromDictionary:@{
-//                                                  @"code": @"code",
-//                                                  @"message": @"message"
-//                                                  }];
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"states"
                                                                             toKeyPath:@"states"
                                                                           withMapping:[KBState mapping]]];
-//    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"neighborhoods"
-//                                                                            toKeyPath:@"neighborhoods"
-//                                                                          withMapping:[KBNeighborhood mapping]]];
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"filters"
+                                                                            toKeyPath:@"filters"
+                                                                          withMapping:[KBFilter mapping]]];
     return mapping;
 }
 

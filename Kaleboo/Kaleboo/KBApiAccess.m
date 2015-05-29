@@ -18,12 +18,12 @@ static NSString * const API_URL = @"http://api.kaleboo.com";
 
 #pragma mark - Requests
 
-- (void)fetchInitializationInformationWithSuccess:(void (^)(NSArray *))success withFailure:(void (^)(NSError *))failure {
+- (void)fetchInitializationInformationWithSuccess:(void (^)(KBHome *))success withFailure:(void (^)(NSError *))failure {
     
     [[RKObjectManager sharedManager] getObjectsAtPath:@"home.php"
                                            parameters:nil
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                  success([mappingResult array]);
+                                                  success([mappingResult array][0]);
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                                   failure(error);

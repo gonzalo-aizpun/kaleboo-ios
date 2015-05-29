@@ -11,6 +11,7 @@
 #import <RestKit/RestKit.h>
 
 #import "KBState.h"
+#import "KBFilter.h"
 
 @interface KBHome : NSObject
 
