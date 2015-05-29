@@ -12,6 +12,8 @@
 
 @interface KBApiAccess : NSObject
 
-- (void)fetchInitializationInformationWithSuccess:(void (^)(KBHome *))success withFailure:(void (^)(NSError *))failure;
+- (void)fetchInitializationInformationWithSuccess:(void (^)(NSArray *, NSArray *))success withFailure:(void (^)(NSError *))failure;
+
+- (void)fetchItemsWithSuccess:(void (^)(NSArray *))success withFailure:(void (^)(NSError *))failure;
 
 @end

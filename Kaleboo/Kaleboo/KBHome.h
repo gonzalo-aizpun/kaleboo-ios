@@ -15,8 +15,6 @@
 
 @interface KBHome : NSObject
 
-//@property (nonatomic) NSNumber * code;
-//@property (nonatomic) NSString * message;
 @property (nonatomic) NSArray * states;
 @property (nonatomic) NSArray * filters;
 

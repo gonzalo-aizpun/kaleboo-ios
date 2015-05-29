@@ -10,6 +10,7 @@
 
 #import "KBApiAccess.h"
 #import "KBHome.h"
+#import "KBItem.h"
 
 @interface ViewController ()
 
@@ -23,8 +24,8 @@
     
     KBApiAccess * apiAccess = [[KBApiAccess alloc] init];
     
-    [apiAccess fetchInitializationInformationWithSuccess:^(KBHome * home) {
-        for (KBState * state in home.states) {
+    [apiAccess fetchInitializationInformationWithSuccess:^(NSArray * states, NSArray * filters) {
+        for (KBState * state in states) {
             NSLog(@"%@ (%@)", state.stateDescription, state.stateId);
             for (KBCity * city in state.cities) {
                 NSLog(@"\t\t%@ (%@)", city.cityDescription, city.cityDescription);
@@ -33,11 +34,21 @@
                 }
             }
         }
-        for (KBFilter * filter in home.filters) {
+        for (KBFilter * filter in filters) {
             NSLog(@"%@ (%@)", filter.filterId, filter.filterType);
             for (KBFilterValue * value in filter.values) {
                 NSLog(@"\t\t%@ (%@)", value.filterValueDescription, value.filterValueId);
             }
+        }
+    } withFailure:^(NSError * e) {
+        NSLog(@"%@", e);
+    }];
+    
+    
+    
+    [apiAccess fetchItemsWithSuccess:^(NSArray * items) {
+        for (KBItem * item in items) {
+            NSLog(@"%@", item.email);
         }
     } withFailure:^(NSError * e) {
         NSLog(@"%@", e);
