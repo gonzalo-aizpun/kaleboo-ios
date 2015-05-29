@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 4
 
+// IQDropDownTextField
+#define COCOAPODS_POD_AVAILABLE_IQDropDownTextField
+#define COCOAPODS_VERSION_MAJOR_IQDropDownTextField 1
+#define COCOAPODS_VERSION_MINOR_IQDropDownTextField 0
+#define COCOAPODS_VERSION_PATCH_IQDropDownTextField 5
+
 // ISO8601DateFormatterValueTransformer
 #define COCOAPODS_POD_AVAILABLE_ISO8601DateFormatterValueTransformer
 #define COCOAPODS_VERSION_MAJOR_ISO8601DateFormatterValueTransformer 0

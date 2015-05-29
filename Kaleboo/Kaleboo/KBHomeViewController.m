@@ -9,11 +9,12 @@
 #import "KBHomeViewController.h"
 
 #import <TTRangeSlider/TTRangeSlider.h>
-#import "UIViewController+KNSemiModal.h"
+#import <IQDropDownTextField/IQDropDownTextField.h>
 
 @interface KBHomeViewController ()
-@property (weak, nonatomic) IBOutlet UILabel * stateLabel;
-@property (weak, nonatomic) IBOutlet UILabel * roomsLabel;
+
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *stateLabel;
+
 @property (weak, nonatomic) IBOutlet TTRangeSlider * priceSlider;
 
 @end
@@ -23,22 +24,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self initializeDropDownLabels];
+}
+
+- (void)initializeDropDownLabels {
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    [toolbar setBarStyle:UIBarStyleBlackTranslucent];
+    [toolbar sizeToFit];
+    UIBarButtonItem *buttonflexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                    target:nil action:nil];
+    UIBarButtonItem *buttonDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                target:self action:@selector(toolbarDoneClicked:)];
+    [buttonDone setTintColor:[UIColor colorWithRed:0.55 green:0.78 blue:0.3 alpha:1.0]];
+    
+    [toolbar setItems:[NSArray arrayWithObjects:buttonflexible,buttonDone, nil]];
+    
+    self.stateLabel.inputAccessoryView = toolbar;
+    self.stateLabel.isOptionalDropDown = NO;
+    self.stateLabel.itemList = [NSArray arrayWithObjects:@"London",@"Johannesburg",@"Moscow",@"Mumbai",@"Tokyo",@"Sydney", nil];
+    
+}
+
+-(void)toolbarDoneClicked:(UIBarButtonItem*)button {
+    [self.view endEditing:YES];
 }
 
 #pragma mark - User Actions
 
-- (IBAction)changeStateTapped:(id)sender {
-    UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeicon"]];
-    [self presentSemiView:imagev];
-}
-
-- (IBAction)changeRoomsTapped:(id)sender {
-    UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeicon"]];
-    [self presentSemiView:imagev];
-}
 
 - (IBAction)searchTapped:(id)sender {
 }
+
+
+//- (IBAction)changeStateTapped:(id)sender {
+//    UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeicon"]];
+//    [self presentSemiView:imagev];
+//}
+//
+//- (IBAction)changeRoomsTapped:(id)sender {
+//    UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeicon"]];
+//    [self presentSemiView:imagev];
+//}
+
 
 /*
 #pragma mark - Navigation
