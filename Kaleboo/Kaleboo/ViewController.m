@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#import "KBApiAccess.h"
+#import "State.h"
+
 @interface ViewController ()
 
 @end
@@ -17,6 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    KBApiAccess * apiAccess = [[KBApiAccess alloc] init];
+
+    [apiAccess getStatesFor:@"www.olx.com.ar" success:^(NSArray * a) {
+        State * s = a[3];
+        NSLog(@"%@", s);
+    } failure:^(NSError * e) {
+        NSLog(@"%@", e);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

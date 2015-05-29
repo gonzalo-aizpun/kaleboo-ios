@@ -14,6 +14,8 @@
 		D70A16D51B18A2D500D46A1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70A16D41B18A2D500D46A1F /* Images.xcassets */; };
 		D70A16D81B18A2D500D46A1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70A16D61B18A2D500D46A1F /* LaunchScreen.xib */; };
 		D70A16E41B18A2D500D46A1F /* KalebooTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D70A16E31B18A2D500D46A1F /* KalebooTests.m */; };
+		D76DD5F21B18A6220012D5CB /* KBApiAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = D76DD5F11B18A6220012D5CB /* KBApiAccess.m */; };
+		D76DD5FC1B18ACBB0012D5CB /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = D76DD5FB1B18ACBB0012D5CB /* State.m */; };
 		D9B606DC81B0E7D3FCDC25A6 /* libPods-Kaleboo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE98A6EAD2250425F20B2F83 /* libPods-Kaleboo.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,10 @@
 		D70A16DD1B18A2D500D46A1F /* KalebooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KalebooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70A16E21B18A2D500D46A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D70A16E31B18A2D500D46A1F /* KalebooTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KalebooTests.m; sourceTree = "<group>"; };
+		D76DD5F01B18A6220012D5CB /* KBApiAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBApiAccess.h; sourceTree = "<group>"; };
+		D76DD5F11B18A6220012D5CB /* KBApiAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBApiAccess.m; sourceTree = "<group>"; };
+		D76DD5FA1B18ACBB0012D5CB /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		D76DD5FB1B18ACBB0012D5CB /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +113,10 @@
 			children = (
 				D70A16CB1B18A2D500D46A1F /* AppDelegate.h */,
 				D70A16CC1B18A2D500D46A1F /* AppDelegate.m */,
-				D70A16CE1B18A2D500D46A1F /* ViewController.h */,
-				D70A16CF1B18A2D500D46A1F /* ViewController.m */,
-				D70A16D11B18A2D500D46A1F /* Main.storyboard */,
-				D70A16D41B18A2D500D46A1F /* Images.xcassets */,
-				D70A16D61B18A2D500D46A1F /* LaunchScreen.xib */,
+				D76DD5F91B18AA700012D5CB /* Models */,
+				D76DD5F31B18A6270012D5CB /* DataAccess */,
+				D76DD5F41B18A6370012D5CB /* Presentation */,
+				D76DD5F51B18A6550012D5CB /* PresentationResources */,
 				D70A16C71B18A2D500D46A1F /* Supporting Files */,
 			);
 			path = Kaleboo;
@@ -141,6 +146,43 @@
 				D70A16E21B18A2D500D46A1F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D76DD5F31B18A6270012D5CB /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				D76DD5F01B18A6220012D5CB /* KBApiAccess.h */,
+				D76DD5F11B18A6220012D5CB /* KBApiAccess.m */,
+			);
+			name = DataAccess;
+			sourceTree = "<group>";
+		};
+		D76DD5F41B18A6370012D5CB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D70A16CE1B18A2D500D46A1F /* ViewController.h */,
+				D70A16CF1B18A2D500D46A1F /* ViewController.m */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		D76DD5F51B18A6550012D5CB /* PresentationResources */ = {
+			isa = PBXGroup;
+			children = (
+				D70A16D11B18A2D500D46A1F /* Main.storyboard */,
+				D70A16D41B18A2D500D46A1F /* Images.xcassets */,
+				D70A16D61B18A2D500D46A1F /* LaunchScreen.xib */,
+			);
+			name = PresentationResources;
+			sourceTree = "<group>";
+		};
+		D76DD5F91B18AA700012D5CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D76DD5FA1B18ACBB0012D5CB /* State.h */,
+				D76DD5FB1B18ACBB0012D5CB /* State.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +321,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70A16D01B18A2D500D46A1F /* ViewController.m in Sources */,
+				D76DD5F21B18A6220012D5CB /* KBApiAccess.m in Sources */,
 				D70A16CD1B18A2D500D46A1F /* AppDelegate.m in Sources */,
+				D76DD5FC1B18ACBB0012D5CB /* State.m in Sources */,
 				D70A16CA1B18A2D500D46A1F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
