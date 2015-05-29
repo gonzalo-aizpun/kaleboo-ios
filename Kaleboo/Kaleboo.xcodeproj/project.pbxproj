@@ -15,7 +15,10 @@
 		D70A16D81B18A2D500D46A1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70A16D61B18A2D500D46A1F /* LaunchScreen.xib */; };
 		D70A16E41B18A2D500D46A1F /* KalebooTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D70A16E31B18A2D500D46A1F /* KalebooTests.m */; };
 		D76DD5F21B18A6220012D5CB /* KBApiAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = D76DD5F11B18A6220012D5CB /* KBApiAccess.m */; };
-		D76DD5FC1B18ACBB0012D5CB /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = D76DD5FB1B18ACBB0012D5CB /* State.m */; };
+		D76DD5FC1B18ACBB0012D5CB /* KBState.m in Sources */ = {isa = PBXBuildFile; fileRef = D76DD5FB1B18ACBB0012D5CB /* KBState.m */; };
+		D7CF75841B18CD3E0057D1A3 /* KBCity.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75831B18CD3E0057D1A3 /* KBCity.m */; };
+		D7CF75871B18CDC20057D1A3 /* KBNeighborhood.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75861B18CDC20057D1A3 /* KBNeighborhood.m */; };
+		D7CF758D1B18D6BA0057D1A3 /* KBHome.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF758C1B18D6BA0057D1A3 /* KBHome.m */; };
 		D9B606DC81B0E7D3FCDC25A6 /* libPods-Kaleboo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE98A6EAD2250425F20B2F83 /* libPods-Kaleboo.a */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +51,14 @@
 		D70A16E31B18A2D500D46A1F /* KalebooTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KalebooTests.m; sourceTree = "<group>"; };
 		D76DD5F01B18A6220012D5CB /* KBApiAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBApiAccess.h; sourceTree = "<group>"; };
 		D76DD5F11B18A6220012D5CB /* KBApiAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBApiAccess.m; sourceTree = "<group>"; };
-		D76DD5FA1B18ACBB0012D5CB /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
-		D76DD5FB1B18ACBB0012D5CB /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
+		D76DD5FA1B18ACBB0012D5CB /* KBState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBState.h; sourceTree = "<group>"; };
+		D76DD5FB1B18ACBB0012D5CB /* KBState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBState.m; sourceTree = "<group>"; };
+		D7CF75821B18CD3E0057D1A3 /* KBCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBCity.h; sourceTree = "<group>"; };
+		D7CF75831B18CD3E0057D1A3 /* KBCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBCity.m; sourceTree = "<group>"; };
+		D7CF75851B18CDC20057D1A3 /* KBNeighborhood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBNeighborhood.h; sourceTree = "<group>"; };
+		D7CF75861B18CDC20057D1A3 /* KBNeighborhood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBNeighborhood.m; sourceTree = "<group>"; };
+		D7CF758B1B18D6BA0057D1A3 /* KBHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBHome.h; sourceTree = "<group>"; };
+		D7CF758C1B18D6BA0057D1A3 /* KBHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBHome.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +188,14 @@
 		D76DD5F91B18AA700012D5CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D76DD5FA1B18ACBB0012D5CB /* State.h */,
-				D76DD5FB1B18ACBB0012D5CB /* State.m */,
+				D7CF758B1B18D6BA0057D1A3 /* KBHome.h */,
+				D7CF758C1B18D6BA0057D1A3 /* KBHome.m */,
+				D76DD5FA1B18ACBB0012D5CB /* KBState.h */,
+				D76DD5FB1B18ACBB0012D5CB /* KBState.m */,
+				D7CF75821B18CD3E0057D1A3 /* KBCity.h */,
+				D7CF75831B18CD3E0057D1A3 /* KBCity.m */,
+				D7CF75851B18CDC20057D1A3 /* KBNeighborhood.h */,
+				D7CF75861B18CDC20057D1A3 /* KBNeighborhood.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -320,10 +335,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7CF75871B18CDC20057D1A3 /* KBNeighborhood.m in Sources */,
+				D7CF758D1B18D6BA0057D1A3 /* KBHome.m in Sources */,
 				D70A16D01B18A2D500D46A1F /* ViewController.m in Sources */,
 				D76DD5F21B18A6220012D5CB /* KBApiAccess.m in Sources */,
+				D7CF75841B18CD3E0057D1A3 /* KBCity.m in Sources */,
 				D70A16CD1B18A2D500D46A1F /* AppDelegate.m in Sources */,
-				D76DD5FC1B18ACBB0012D5CB /* State.m in Sources */,
+				D76DD5FC1B18ACBB0012D5CB /* KBState.m in Sources */,
 				D70A16CA1B18A2D500D46A1F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

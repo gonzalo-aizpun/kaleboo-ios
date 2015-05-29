@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #import "KBApiAccess.h"
-#import "State.h"
+#import "KBHome.h"
 
 @interface ViewController ()
 
@@ -21,13 +21,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
     KBApiAccess * apiAccess = [[KBApiAccess alloc] init];
-
-    [apiAccess getStatesFor:@"www.olx.com.ar" success:^(NSArray * a) {
-        State * s = a[3];
+    
+    [apiAccess fetchInitializationInformationWithSuccess:^(NSArray * a) {
+        KBHome * s = a[0];
+        for (KBState * state in s.states) {
+            NSLog(@"%@ (%@)", state.stateDescription, state.stateId);
+            for (KBCity * city in state.cities) {
+                NSLog(@"\t\t%@ (%@)", city.cityDescription, city.cityDescription);
+                for (KBNeighborhood * barrio in city.neighborhoods) {
+                    NSLog(@"\t\t\t\t %@ (%@)", barrio.neighborhoodDescription, barrio.neighborhoodId);
+                }
+            }
+        }
         NSLog(@"%@", s);
-    } failure:^(NSError * e) {
+    } withFailure:^(NSError * e) {
         NSLog(@"%@", e);
     }];
     

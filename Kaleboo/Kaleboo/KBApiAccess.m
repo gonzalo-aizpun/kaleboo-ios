@@ -10,61 +10,47 @@
 
 #import <RestKit/RestKit.h>
 
-#import "State.h"
+#import "KBHome.h"
 
 @implementation KBApiAccess
 
-static NSString * const API_URL = @"http://api-v2.olx.com";
+static NSString * const API_URL = @"http://api.kaleboo.com";
 
+#pragma mark - Requests
 
+- (void)fetchInitializationInformationWithSuccess:(void (^)(NSArray *))success withFailure:(void (^)(NSError *))failure {
+    
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"home.php"
+                                           parameters:nil
+                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                  success([mappingResult array]);
+                                              }
+                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                  failure(error);
+                                              }];
+}
+
+#pragma mark - Initialization
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         
-        [AFNetworkActivityIndicatorManager sharedManager].enabled = YES; //this will show the network activity indicator in the status bar while an HTTP request is being performed.
+        [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
         
-        NSURL *baseURL = [NSURL URLWithString:API_URL];
-        
-        RKObjectManager * objectManager = [RKObjectManager managerWithBaseURL:baseURL]; //set the object manager's base server URL
+        RKObjectManager * objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:API_URL]];
         [RKObjectManager setSharedManager:objectManager];
         
-        RKResponseDescriptor *stateResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[State mapping]
-                                                                                                     method:RKRequestMethodAny
-                                                                                                pathPattern:@"/countries/:country/states"
-                                                                                                    keyPath:nil
-                                                                                                statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-        
-        [[RKObjectManager sharedManager] addResponseDescriptor:stateResponseDescriptor];
+        RKResponseDescriptor * homeRD = [RKResponseDescriptor responseDescriptorWithMapping:[KBHome mapping]
+                                                                                     method:RKRequestMethodAny
+                                                                                pathPattern:nil
+                                                                                    keyPath:@"data"
+                                                                                statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+        [[RKObjectManager sharedManager] addResponseDescriptor:homeRD];
         
     }
     return self;
-}
-
-- (void)getStatesFor:(NSString *)country
-             success:(void (^)(NSArray *))success
-             failure:(void (^)(NSError *))failure {
-    
-    NSString * queryPath = [NSString stringWithFormat:@"/countries/%@/states", country];
-    [[RKObjectManager sharedManager] getObjectsAtPath:queryPath
-                                           parameters:[KBApiAccess queryParameters]
-                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                  NSLog(@"Success");
-                                                  success([mappingResult array]);
-                                              }
-                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                  NSLog(@"Failure");
-                                                  failure(error);
-                                              }];
-}
-
-+ (NSDictionary *) queryParameters {
-    
-    return @{@"platform": @"ios",
-             @"version": @"9.9.9",
-             @"languageCode": @"en"
-             };
 }
 
 @end

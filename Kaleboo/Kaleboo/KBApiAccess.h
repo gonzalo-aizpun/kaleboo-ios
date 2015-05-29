@@ -10,8 +10,6 @@
 
 @interface KBApiAccess : NSObject
 
-- (void)getStatesFor:(NSString *)country
-             success:(void (^)(NSArray *))success
-             failure:(void (^)(NSError *))failure;
+- (void)fetchInitializationInformationWithSuccess:(void (^)(NSArray *))success withFailure:(void (^)(NSError *))failure;
 
 @end

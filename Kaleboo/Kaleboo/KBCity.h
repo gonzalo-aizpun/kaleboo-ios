@@ -1,5 +1,5 @@
 //
-//  State.h
+//  KBCity.h
 //  Kaleboo
 //
 //  Created by OLX - Andres Ciaño on 5/29/15.
@@ -10,11 +10,13 @@
 
 #import <RestKit/RestKit.h>
 
-@interface State : NSObject
+#import "KBNeighborhood.h"
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * stateId;
-@property (nonatomic, retain) NSString * url;
+@interface KBCity : NSObject
+
+@property (nonatomic) NSNumber * cityId;
+@property (nonatomic) NSString * cityDescription;
+@property (nonatomic) NSArray * neighborhoods;
 
 + (RKObjectMapping *)mapping;
 
