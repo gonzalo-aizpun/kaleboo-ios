@@ -22,4 +22,14 @@
 //          NSError
 - (void)fetchItemsWithSuccess:(void (^)(NSArray *))success withFailure:(void (^)(NSError *))failure;
 
+
+
+- (void)filterComboWithValue:(NSString *)value forKey:(NSString *)key;
+
+- (void)filterNumericBiggerThanValue:(NSNumber *)value forKey:(NSString *)key;
+- (void)filterNumericSmallerThanValue:(NSNumber *)value forKey:(NSString *)key;
+- (void)filterNumericEqualToValue:(NSNumber *)value forKey:(NSString *)key;
+
+- (void)resetFilters;
+
 @end

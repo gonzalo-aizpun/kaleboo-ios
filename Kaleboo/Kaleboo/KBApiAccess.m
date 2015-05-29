@@ -14,6 +14,12 @@
 #import "KBFilter.h"
 #import "KBItem.h"
 
+@interface KBApiAccess ()
+
+@property (nonatomic) NSMutableDictionary * filtersDictionary;
+
+@end
+
 @implementation KBApiAccess
 
 static NSString * const API_URL = @"http://api.kaleboo.com";
@@ -36,12 +42,41 @@ static NSString * const API_URL = @"http://api.kaleboo.com";
 - (void)fetchItemsWithSuccess:(void (^)(NSArray *))success withFailure:(void (^)(NSError *))failure {
     
     [[RKObjectManager sharedManager] getObjectsAtPath:@"items/index.php"
-                                           parameters:nil
+                                           parameters:self.filtersDictionary
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                  [self resetFilters];
                                                   success([mappingResult array]);
                                               } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                  [self resetFilters];
                                                   failure(error);
                                               }];
+}
+
+#pragma mark - Filters
+
+- (void)filterComboWithValue:(NSString *)value forKey:(NSString *)key {
+    [self.filtersDictionary setObject:value forKey:key];
+}
+
+- (void)filterNumericBiggerThanValue:(NSNumber *)value forKey:(NSString *)key {
+    NSString * minKey = [NSString stringWithFormat:@"min_%@", key];
+    [self.filtersDictionary setObject:value forKey:minKey];
+}
+
+- (void)filterNumericSmallerThanValue:(NSNumber *)value forKey:(NSString *)key {
+    NSString * maxKey = [NSString stringWithFormat:@"max_%@", key];
+    [self.filtersDictionary setObject:value forKey:maxKey];
+}
+
+- (void)filterNumericEqualToValue:(NSNumber *)value forKey:(NSString *)key {
+    NSString * minKey = [NSString stringWithFormat:@"min_%@", key];
+    NSString * maxKey = [NSString stringWithFormat:@"max_%@", key];
+    [self.filtersDictionary setObject:value forKey:minKey];
+    [self.filtersDictionary setObject:value forKey:maxKey];
+}
+
+- (void)resetFilters {
+    [self.filtersDictionary removeAllObjects];
 }
 
 #pragma mark - Initialization
@@ -50,6 +85,8 @@ static NSString * const API_URL = @"http://api.kaleboo.com";
 {
     self = [super init];
     if (self) {
+        
+        self.filtersDictionary = [[NSMutableDictionary alloc] init];
         
         [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
         

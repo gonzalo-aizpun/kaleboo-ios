@@ -25,6 +25,22 @@
     
     KBApiAccess * apiAccess = [[KBApiAccess alloc] init];
     
+    [self testInitializationWithApi:apiAccess];
+        NSLog(@"\n\n\n");
+    
+    [self testItemsWithApi:apiAccess];
+        NSLog(@"\n\n\n");
+    
+    [apiAccess filterNumericBiggerThanValue:@985000 forKey:@"price"];
+    [self testItemsWithApi:apiAccess];
+        NSLog(@"\n\n\n");
+    
+    [apiAccess filterComboWithValue:@"1" forKey:@"id_identity"];
+    [self testItemsWithApi:apiAccess];
+        NSLog(@"\n\n\n");
+}
+
+- (void)testInitializationWithApi:(KBApiAccess *)apiAccess {
     [apiAccess fetchInitializationInformationWithSuccess:^(NSArray * states, NSArray * filters) {
         for (KBState * state in states) {
             NSLog(@"%@ (%@)", state.stateDescription, state.stateId);
@@ -44,22 +60,18 @@
     } withFailure:^(NSError * e) {
         NSLog(@"%@", e);
     }];
-    
-    
-    
+}
+
+- (void)testItemsWithApi:(KBApiAccess *)apiAccess {
     [apiAccess fetchItemsWithSuccess:^(NSArray * items) {
+        int i = 0;
         for (KBItem * item in items) {
-            NSLog(@"%@", item.email);
+            NSLog(@"%d>> %@", i, item.email);
+            i ++;
         }
     } withFailure:^(NSError * e) {
         NSLog(@"%@", e);
     }];
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
