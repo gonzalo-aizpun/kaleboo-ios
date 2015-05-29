@@ -10,9 +10,6 @@
 
 #import <RestKit/RestKit.h>
 
-#import "KBState.h"
-#import "KBCity.h"
-#import "KBNeighborhood.h"
 #import "KBFilterValue.h"
 
 @interface KBItem : NSObject

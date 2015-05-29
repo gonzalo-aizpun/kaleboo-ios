@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-#import "KBHome.h"
-
 @interface KBApiAccess : NSObject
 
+// Success:
+//          NSArray<KBState> | NSArray<KBFilter>
+// Error
+//          NSError
 - (void)fetchInitializationInformationWithSuccess:(void (^)(NSArray *, NSArray *))success withFailure:(void (^)(NSError *))failure;
 
+// Success:
+//          NSArray<KBItem>
+// Error
+//          NSError
 - (void)fetchItemsWithSuccess:(void (^)(NSArray *))success withFailure:(void (^)(NSError *))failure;
 
 @end

@@ -9,7 +9,8 @@
 #import "ViewController.h"
 
 #import "KBApiAccess.h"
-#import "KBHome.h"
+#import "KBState.h"
+#import "KBFilter.h"
 #import "KBItem.h"
 
 @interface ViewController ()

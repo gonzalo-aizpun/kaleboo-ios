@@ -10,7 +10,8 @@
 
 #import <RestKit/RestKit.h>
 
-#import "KBHome.h"
+#import "KBState.h"
+#import "KBFilter.h"
 #import "KBItem.h"
 
 @implementation KBApiAccess
@@ -54,14 +55,6 @@ static NSString * const API_URL = @"http://api.kaleboo.com";
         
         RKObjectManager * objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:API_URL]];
         [RKObjectManager setSharedManager:objectManager];
-//        
-//        RKResponseDescriptor * homeRD = [RKResponseDescriptor responseDescriptorWithMapping:[KBHome mapping]
-//                                                                                     method:RKRequestMethodAny
-//                                                                                pathPattern:nil
-//                                                                                    keyPath:@"data"
-//                                                                                statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-//        [[RKObjectManager sharedManager] addResponseDescriptor:homeRD];
-
         
         RKResponseDescriptor * locationsRD = [RKResponseDescriptor responseDescriptorWithMapping:[KBState mapping]
                                                                                           method:RKRequestMethodAny
