@@ -71,6 +71,15 @@
                                             <action selector="searchTapped:" destination="BGH-wt-GhT" eventType="touchUpInside" id="G1d-vi-IhJ"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bogotá" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wsz-s2-TMX" customClass="IQDropDownTextField">
+                                        <rect key="frame" x="20" y="15" width="560" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="LcH-eg-4EU"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.60961252450942993" green="0.52177155017852783" blue="0.26873525977134705" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="estado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKG-xM-8xX">
                                         <rect key="frame" x="277" y="70" width="46" height="19"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
@@ -98,14 +107,17 @@
                                             <constraint firstAttribute="height" constant="1" id="UAw-9h-FmS"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhc-es-RKO">
-                                        <rect key="frame" x="292" y="120" width="17" height="54"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jrm-Vm-FNm" customClass="IQDropDownTextField">
+                                        <rect key="frame" x="20" y="120" width="560" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="bdd-xk-ihy"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.60961252450000003" green="0.52177155019999999" blue="0.26873525980000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="40"/>
-                                        <color key="textColor" red="0.67450980390000004" green="0.58823529409999997" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ambientes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKu-ki-m7G">
-                                        <rect key="frame" x="266" y="174" width="69" height="20"/>
+                                        <rect key="frame" x="266" y="175" width="69" height="19"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -178,22 +190,14 @@
                                             <constraint firstAttribute="height" constant="20" id="c5D-5Y-DFN"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bogotá" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wsz-s2-TMX" customClass="IQDropDownTextField">
-                                        <rect key="frame" x="20" y="15" width="560" height="55"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="LcH-eg-4EU"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.60961252450942993" green="0.52177155017852783" blue="0.26873525977134705" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ZOc-E9-uAE" secondAttribute="trailing" constant="20" id="14D-2w-rY6"/>
                                     <constraint firstItem="ZOc-E9-uAE" firstAttribute="top" secondItem="TTf-qF-m21" secondAttribute="bottom" constant="42" id="18p-i1-l6f"/>
                                     <constraint firstAttribute="centerX" secondItem="E10-vm-O7J" secondAttribute="centerX" id="2V6-ha-UIm"/>
-                                    <constraint firstItem="zhc-es-RKO" firstAttribute="top" secondItem="ZOc-E9-uAE" secondAttribute="bottom" constant="15" id="B6o-vZ-HjR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jrm-Vm-FNm" secondAttribute="trailing" constant="20" id="56Q-M6-zOI"/>
+                                    <constraint firstItem="Jrm-Vm-FNm" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="20" id="Aw3-cv-KOb"/>
                                     <constraint firstItem="fKf-xY-CJw" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="20" id="DnI-Ia-Itn"/>
                                     <constraint firstItem="ZOc-E9-uAE" firstAttribute="top" secondItem="i7X-FL-Px1" secondAttribute="bottom" constant="42" id="EcW-AV-gZA"/>
                                     <constraint firstItem="ZOc-E9-uAE" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="20" id="FM7-zK-75Q"/>
@@ -202,15 +206,16 @@
                                     <constraint firstAttribute="trailing" secondItem="Wsz-s2-TMX" secondAttribute="trailing" constant="20" id="IeU-Cy-xdU"/>
                                     <constraint firstItem="QCv-PC-MYZ" firstAttribute="top" secondItem="fKf-xY-CJw" secondAttribute="bottom" constant="42" id="K6a-sF-3UP"/>
                                     <constraint firstItem="kKG-xM-8xX" firstAttribute="top" secondItem="Wsz-s2-TMX" secondAttribute="bottom" id="KDJ-yh-tGg"/>
-                                    <constraint firstItem="zhc-es-RKO" firstAttribute="top" secondItem="kKG-xM-8xX" secondAttribute="bottom" constant="30" id="M1f-kh-Brm"/>
+                                    <constraint firstItem="CKu-ki-m7G" firstAttribute="top" secondItem="Jrm-Vm-FNm" secondAttribute="bottom" id="MYn-Za-cTC"/>
                                     <constraint firstItem="adp-Af-u5G" firstAttribute="top" secondItem="E10-vm-O7J" secondAttribute="bottom" constant="40" id="No6-IL-HWD"/>
                                     <constraint firstItem="ZOc-E9-uAE" firstAttribute="top" secondItem="kKG-xM-8xX" secondAttribute="bottom" constant="15" id="OAc-Sr-Yxz"/>
+                                    <constraint firstItem="Jrm-Vm-FNm" firstAttribute="top" secondItem="ZOc-E9-uAE" secondAttribute="bottom" constant="15" id="OIR-wv-QvX"/>
                                     <constraint firstItem="FRL-Z8-Ail" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" id="Qv1-BD-Is6"/>
                                     <constraint firstItem="fKf-xY-CJw" firstAttribute="top" secondItem="CKu-ki-m7G" secondAttribute="bottom" constant="15" id="SMp-JI-pYe"/>
                                     <constraint firstAttribute="centerX" secondItem="CKu-ki-m7G" secondAttribute="centerX" id="TUy-en-kwW"/>
-                                    <constraint firstItem="CKu-ki-m7G" firstAttribute="top" secondItem="zhc-es-RKO" secondAttribute="bottom" id="Tyo-QD-pgP"/>
                                     <constraint firstAttribute="trailing" secondItem="adp-Af-u5G" secondAttribute="trailing" constant="60" id="VC6-mX-eJE"/>
                                     <constraint firstItem="QVP-WT-wer" firstAttribute="top" secondItem="fKf-xY-CJw" secondAttribute="bottom" constant="42" id="Xyg-Z0-fCw"/>
+                                    <constraint firstAttribute="centerX" secondItem="Jrm-Vm-FNm" secondAttribute="centerX" id="bl5-GM-K1x"/>
                                     <constraint firstItem="i7X-FL-Px1" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="20" id="cE2-8n-sHY"/>
                                     <constraint firstItem="i7X-FL-Px1" firstAttribute="top" secondItem="syD-t0-AN1" secondAttribute="top" constant="42" id="dyI-lW-4pz"/>
                                     <constraint firstItem="5uT-Pi-0Zj" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="20" id="eKF-5U-JbU"/>
@@ -224,18 +229,18 @@
                                     <constraint firstItem="5uT-Pi-0Zj" firstAttribute="top" secondItem="ZOc-E9-uAE" secondAttribute="bottom" constant="42" id="qZA-8L-2rl"/>
                                     <constraint firstItem="fKf-xY-CJw" firstAttribute="top" secondItem="ldM-pl-vdV" secondAttribute="bottom" constant="42" id="rfs-K2-7p8"/>
                                     <constraint firstItem="Wsz-s2-TMX" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="20" id="rwl-va-Zi6"/>
+                                    <constraint firstItem="fKf-xY-CJw" firstAttribute="top" secondItem="Jrm-Vm-FNm" secondAttribute="bottom" constant="36" id="rxD-3j-hoa"/>
                                     <constraint firstAttribute="trailing" secondItem="ldM-pl-vdV" secondAttribute="trailing" constant="20" id="tHU-oN-iiA"/>
                                     <constraint firstItem="adp-Af-u5G" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="60" id="twk-I8-7ax"/>
                                     <constraint firstItem="QCv-PC-MYZ" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="20" id="u2F-zx-W3B"/>
                                     <constraint firstItem="E10-vm-O7J" firstAttribute="top" secondItem="fKf-xY-CJw" secondAttribute="bottom" constant="20" id="udx-KO-Jgv"/>
                                     <constraint firstAttribute="trailing" secondItem="TTf-qF-m21" secondAttribute="trailing" constant="20" id="vV2-77-UdT"/>
-                                    <constraint firstAttribute="centerX" secondItem="zhc-es-RKO" secondAttribute="centerX" id="w1F-u1-U4C"/>
                                     <constraint firstItem="Wsz-s2-TMX" firstAttribute="top" secondItem="syD-t0-AN1" secondAttribute="top" constant="15" id="wdQ-JD-Xes"/>
                                     <constraint firstAttribute="trailing" secondItem="QVP-WT-wer" secondAttribute="trailing" constant="20" id="yeU-aC-2i4"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="M1f-kh-Brm"/>
+                                        <exclude reference="rxD-3j-hoa"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -255,6 +260,7 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="priceSlider" destination="adp-Af-u5G" id="PpK-29-Uwn"/>
+                        <outlet property="roomsLabel" destination="Jrm-Vm-FNm" id="Dyp-xM-53w"/>
                         <outlet property="stateLabel" destination="Wsz-s2-TMX" id="oXq-fJ-5W3"/>
                     </connections>
                 </viewController>

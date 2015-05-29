@@ -14,6 +14,7 @@
 @interface KBHomeViewController ()
 
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *stateLabel;
+@property (weak, nonatomic) IBOutlet IQDropDownTextField *roomsLabel;
 
 @property (weak, nonatomic) IBOutlet TTRangeSlider * priceSlider;
 
@@ -44,6 +45,10 @@
     self.stateLabel.inputAccessoryView = toolbar;
     self.stateLabel.isOptionalDropDown = NO;
     self.stateLabel.itemList = [NSArray arrayWithObjects:@"London",@"Johannesburg",@"Moscow",@"Mumbai",@"Tokyo",@"Sydney", nil];
+    
+    self.roomsLabel.inputAccessoryView = toolbar;
+    self.roomsLabel.isOptionalDropDown = NO;
+    self.roomsLabel.itemList = [NSArray arrayWithObjects:@"London",@"Johannesburg",@"Moscow",@"Mumbai",@"Tokyo",@"Sydney", nil];
     
 }
 
