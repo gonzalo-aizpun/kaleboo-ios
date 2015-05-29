@@ -58,10 +58,10 @@
                                 <rect key="frame" x="0.0" y="218" width="600" height="1182"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRL-Z8-Ail">
-                                        <rect key="frame" x="0.0" y="1122" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="1082" width="600" height="100"/>
                                         <color key="backgroundColor" red="0.5490196078431373" green="0.78431372549019607" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="l0s-bA-nfy"/>
+                                            <constraint firstAttribute="height" constant="100" id="l0s-bA-nfy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="30"/>
                                         <state key="normal" title="buscar">
@@ -113,6 +113,33 @@
                                             <constraint firstAttribute="height" constant="1" id="xx9-nw-V9V"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adp-Af-u5G" customClass="TTRangeSlider">
+                                        <rect key="frame" x="60" y="314" width="480" height="10"/>
+                                        <color key="tintColor" red="0.60961252450942993" green="0.52177155017852783" blue="0.26873525977134705" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="dZJ-9V-Sev"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                <real key="value" value="100000"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <real key="value" value="3000000"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="selectedMinimum">
+                                                <real key="value" value="500000"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="selectedMaximum">
+                                                <real key="value" value="1500000"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="minLabelColour">
+                                                <color key="value" red="0.60961252450942993" green="0.52177155017852783" blue="0.26873525977134705" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="maxLabelColour">
+                                                <color key="value" red="0.60961252450942993" green="0.52177155017852783" blue="0.26873525977134705" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -126,15 +153,18 @@
                                     <constraint firstItem="BiV-6Z-SfO" firstAttribute="top" secondItem="syD-t0-AN1" secondAttribute="top" constant="20" id="Izr-HY-ZYp"/>
                                     <constraint firstItem="kKG-xM-8xX" firstAttribute="top" secondItem="BiV-6Z-SfO" secondAttribute="bottom" id="Je4-6t-Gzj"/>
                                     <constraint firstItem="zhc-es-RKO" firstAttribute="top" secondItem="kKG-xM-8xX" secondAttribute="bottom" constant="30" id="M1f-kh-Brm"/>
+                                    <constraint firstItem="adp-Af-u5G" firstAttribute="top" secondItem="E10-vm-O7J" secondAttribute="bottom" constant="40" id="No6-IL-HWD"/>
                                     <constraint firstItem="ZOc-E9-uAE" firstAttribute="top" secondItem="kKG-xM-8xX" secondAttribute="bottom" constant="15" id="OAc-Sr-Yxz"/>
                                     <constraint firstItem="FRL-Z8-Ail" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" id="Qv1-BD-Is6"/>
                                     <constraint firstItem="fKf-xY-CJw" firstAttribute="top" secondItem="CKu-ki-m7G" secondAttribute="bottom" constant="15" id="SMp-JI-pYe"/>
                                     <constraint firstAttribute="centerX" secondItem="CKu-ki-m7G" secondAttribute="centerX" id="TUy-en-kwW"/>
                                     <constraint firstItem="CKu-ki-m7G" firstAttribute="top" secondItem="zhc-es-RKO" secondAttribute="bottom" id="Tyo-QD-pgP"/>
+                                    <constraint firstAttribute="trailing" secondItem="adp-Af-u5G" secondAttribute="trailing" constant="60" id="VC6-mX-eJE"/>
                                     <constraint firstAttribute="centerX" secondItem="BiV-6Z-SfO" secondAttribute="centerX" id="b0H-Dy-aEq"/>
                                     <constraint firstAttribute="bottom" secondItem="FRL-Z8-Ail" secondAttribute="bottom" id="lB0-KN-V58"/>
                                     <constraint firstAttribute="trailing" secondItem="fKf-xY-CJw" secondAttribute="trailing" constant="20" id="n7c-R9-rmz"/>
                                     <constraint firstAttribute="centerX" secondItem="FRL-Z8-Ail" secondAttribute="centerX" id="paq-wm-HsB"/>
+                                    <constraint firstItem="adp-Af-u5G" firstAttribute="leading" secondItem="syD-t0-AN1" secondAttribute="leading" constant="60" id="twk-I8-7ax"/>
                                     <constraint firstItem="E10-vm-O7J" firstAttribute="top" secondItem="fKf-xY-CJw" secondAttribute="bottom" constant="20" id="udx-KO-Jgv"/>
                                     <constraint firstAttribute="centerX" secondItem="zhc-es-RKO" secondAttribute="centerX" id="w1F-u1-U4C"/>
                                 </constraints>

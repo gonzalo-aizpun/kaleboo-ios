@@ -5,5 +5,7 @@ target 'Kaleboo' do
 
 pod 'RestKit', '~> 0.24'
 
+pod 'TTRangeSlider', '~> 1.0'
+
 end
 
