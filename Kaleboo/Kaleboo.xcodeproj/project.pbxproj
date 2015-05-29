@@ -14,6 +14,7 @@
 		D70A16D51B18A2D500D46A1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70A16D41B18A2D500D46A1F /* Images.xcassets */; };
 		D70A16D81B18A2D500D46A1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70A16D61B18A2D500D46A1F /* LaunchScreen.xib */; };
 		D70A16E41B18A2D500D46A1F /* KalebooTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D70A16E31B18A2D500D46A1F /* KalebooTests.m */; };
+		D9B606DC81B0E7D3FCDC25A6 /* libPods-Kaleboo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE98A6EAD2250425F20B2F83 /* libPods-Kaleboo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E2013FB47DF1E819C67243C /* Pods-Kaleboo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaleboo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaleboo/Pods-Kaleboo.debug.xcconfig"; sourceTree = "<group>"; };
+		ACF8D3B643117730CA432F4C /* Pods-Kaleboo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaleboo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaleboo/Pods-Kaleboo.release.xcconfig"; sourceTree = "<group>"; };
+		CE98A6EAD2250425F20B2F83 /* libPods-Kaleboo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kaleboo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70A16C41B18A2D500D46A1F /* Kaleboo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaleboo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70A16C81B18A2D500D46A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D70A16C91B18A2D500D46A1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B606DC81B0E7D3FCDC25A6 /* libPods-Kaleboo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5ACEEB1B39F7FA873B63712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE98A6EAD2250425F20B2F83 /* libPods-Kaleboo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAA8C93A64543DB84272C9C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E2013FB47DF1E819C67243C /* Pods-Kaleboo.debug.xcconfig */,
+				ACF8D3B643117730CA432F4C /* Pods-Kaleboo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D70A16BB1B18A2D500D46A1F = {
 			isa = PBXGroup;
 			children = (
 				D70A16C61B18A2D500D46A1F /* Kaleboo */,
 				D70A16E01B18A2D500D46A1F /* KalebooTests */,
 				D70A16C51B18A2D500D46A1F /* Products */,
+				CAA8C93A64543DB84272C9C9 /* Pods */,
+				C5ACEEB1B39F7FA873B63712 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D70A16E71B18A2D500D46A1F /* Build configuration list for PBXNativeTarget "Kaleboo" */;
 			buildPhases = (
+				6A5267878DB302720E9469E5 /* Check Pods Manifest.lock */,
 				D70A16C01B18A2D500D46A1F /* Sources */,
 				D70A16C11B18A2D500D46A1F /* Frameworks */,
 				D70A16C21B18A2D500D46A1F /* Resources */,
+				23076CB28DD9941868E2F4DA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23076CB28DD9941868E2F4DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaleboo/Pods-Kaleboo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A5267878DB302720E9469E5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D70A16C01B18A2D500D46A1F /* Sources */ = {
@@ -347,9 +406,11 @@
 		};
 		D70A16E81B18A2D500D46A1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E2013FB47DF1E819C67243C /* Pods-Kaleboo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Kaleboo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,9 +418,11 @@
 		};
 		D70A16E91B18A2D500D46A1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACF8D3B643117730CA432F4C /* Pods-Kaleboo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Kaleboo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +481,7 @@
 				D70A16E91B18A2D500D46A1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D70A16EA1B18A2D500D46A1F /* Build configuration list for PBXNativeTarget "KalebooTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +490,7 @@
 				D70A16EC1B18A2D500D46A1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
