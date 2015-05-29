@@ -4,6 +4,7 @@ platform :ios, '7.0'
 target 'Kaleboo' do
 
 pod 'RestKit', '~> 0.24'
+pod 'Canvas', '~> 0.1'
 
 end
 
