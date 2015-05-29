@@ -9,6 +9,7 @@
 #import "KBHomeViewController.h"
 
 #import <TTRangeSlider/TTRangeSlider.h>
+#import "UIViewController+KNSemiModal.h"
 
 @interface KBHomeViewController ()
 @property (weak, nonatomic) IBOutlet UILabel * stateLabel;
@@ -27,9 +28,13 @@
 #pragma mark - User Actions
 
 - (IBAction)changeStateTapped:(id)sender {
+    UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeicon"]];
+    [self presentSemiView:imagev];
 }
 
 - (IBAction)changeRoomsTapped:(id)sender {
+    UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeicon"]];
+    [self presentSemiView:imagev];
 }
 
 - (IBAction)searchTapped:(id)sender {
