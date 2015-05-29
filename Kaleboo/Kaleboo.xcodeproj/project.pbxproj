@@ -23,6 +23,7 @@
 		D7CE3F581B191DA200F7D978 /* ico-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CE3F521B191DA200F7D978 /* ico-filter.png */; };
 		D7CE3F591B191DA200F7D978 /* ico-search.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CE3F531B191DA200F7D978 /* ico-search.png */; };
 		D7CE3F5A1B191DA200F7D978 /* logo-with-line.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CE3F541B191DA200F7D978 /* logo-with-line.png */; };
+		D7CE3F5D1B19239E00F7D978 /* KBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CE3F5C1B19239E00F7D978 /* KBHomeViewController.m */; };
 		D7CF75841B18CD3E0057D1A3 /* KBCity.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75831B18CD3E0057D1A3 /* KBCity.m */; };
 		D7CF75871B18CDC20057D1A3 /* KBNeighborhood.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75861B18CDC20057D1A3 /* KBNeighborhood.m */; };
 		D7CF75901B18E2E30057D1A3 /* KBFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF758F1B18E2E30057D1A3 /* KBFilter.m */; };
@@ -69,6 +70,8 @@
 		D7CE3F521B191DA200F7D978 /* ico-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ico-filter.png"; path = "Resources/ico-filter.png"; sourceTree = SOURCE_ROOT; };
 		D7CE3F531B191DA200F7D978 /* ico-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ico-search.png"; path = "Resources/ico-search.png"; sourceTree = SOURCE_ROOT; };
 		D7CE3F541B191DA200F7D978 /* logo-with-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-with-line.png"; path = "Resources/logo-with-line.png"; sourceTree = SOURCE_ROOT; };
+		D7CE3F5B1B19239E00F7D978 /* KBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBHomeViewController.h; sourceTree = "<group>"; };
+		D7CE3F5C1B19239E00F7D978 /* KBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBHomeViewController.m; sourceTree = "<group>"; };
 		D7CF75821B18CD3E0057D1A3 /* KBCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBCity.h; sourceTree = "<group>"; };
 		D7CF75831B18CD3E0057D1A3 /* KBCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBCity.m; sourceTree = "<group>"; };
 		D7CF75851B18CDC20057D1A3 /* KBNeighborhood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBNeighborhood.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 			children = (
 				D70A16CE1B18A2D500D46A1F /* ViewController.h */,
 				D70A16CF1B18A2D500D46A1F /* ViewController.m */,
+				D7CE3F5B1B19239E00F7D978 /* KBHomeViewController.h */,
+				D7CE3F5C1B19239E00F7D978 /* KBHomeViewController.m */,
 			);
 			name = Presentation;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7CE3F5D1B19239E00F7D978 /* KBHomeViewController.m in Sources */,
 				D7CF75871B18CDC20057D1A3 /* KBNeighborhood.m in Sources */,
 				D70A16D01B18A2D500D46A1F /* ViewController.m in Sources */,
 				D76DD5F21B18A6220012D5CB /* KBApiAccess.m in Sources */,
