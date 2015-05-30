@@ -10,6 +10,7 @@
 
 #import <FSImageViewer/FSBasicImage.h>
 #import <FSImageViewer/FSBasicImageSource.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #import "KBItemDetailView.h"
 
@@ -99,6 +100,14 @@
     detailView.propertyTypeLabel.text = self.selectedItem.type.filterValueDescription;
     detailView.expenseLabel.text = expenseString;
     
+    if ([self.selectedItem.images count] > 0) {
+        [detailView.coverButton setEnabled:YES];
+        KBImage * coverImage = self.selectedItem.images[0];
+        [detailView.coverImageView sd_setImageWithURL:[NSURL URLWithString:coverImage.imageUrl]];
+    } else {
+        [detailView.coverButton setEnabled:NO];
+    }
+    
     return view;
 }
 
@@ -131,9 +140,6 @@
     
     FSImageViewerViewController *imageViewController = [[FSImageViewerViewController alloc] initWithImageSource:photoSource];
     [imageViewController.view addSubview:toolbar];
-    
-    //    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:imageViewController];
-    //    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
     [self presentViewController:imageViewController animated:YES completion:nil];
 }
 

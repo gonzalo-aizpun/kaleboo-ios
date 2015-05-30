@@ -23,6 +23,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *expenseLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+@property (weak, nonatomic) IBOutlet UIButton *coverButton;
+
 @property (nonatomic) KBPagerViewController * delegate;
 
 @end

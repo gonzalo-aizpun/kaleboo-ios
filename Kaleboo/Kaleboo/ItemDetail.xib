@@ -150,6 +150,9 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o16-Gb-68n">
                             <rect key="frame" x="0.0" y="0.0" width="540" height="169"/>
                             <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_gallery.png" translatesAutoresizingMaskIntoConstraints="NO" id="qIJ-1g-4c8">
+                                    <rect key="frame" x="0.0" y="0.0" width="540" height="169"/>
+                                </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g79-YX-K5n">
                                     <rect key="frame" x="0.0" y="0.0" width="540" height="169"/>
                                     <state key="normal">
@@ -164,8 +167,12 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="g79-YX-K5n" secondAttribute="bottom" id="29a-Px-oHJ"/>
                                 <constraint firstAttribute="trailing" secondItem="g79-YX-K5n" secondAttribute="trailing" id="9NB-tw-DGs"/>
+                                <constraint firstAttribute="bottom" secondItem="qIJ-1g-4c8" secondAttribute="bottom" id="HfE-63-Q29"/>
                                 <constraint firstItem="g79-YX-K5n" firstAttribute="top" secondItem="o16-Gb-68n" secondAttribute="top" id="N1i-dC-GBY"/>
                                 <constraint firstItem="g79-YX-K5n" firstAttribute="leading" secondItem="o16-Gb-68n" secondAttribute="leading" id="ZcD-fm-9tP"/>
+                                <constraint firstItem="qIJ-1g-4c8" firstAttribute="leading" secondItem="o16-Gb-68n" secondAttribute="leading" id="dH2-44-oEn"/>
+                                <constraint firstItem="qIJ-1g-4c8" firstAttribute="top" secondItem="o16-Gb-68n" secondAttribute="top" id="gLR-qA-CTa"/>
+                                <constraint firstAttribute="trailing" secondItem="qIJ-1g-4c8" secondAttribute="trailing" id="tUu-dp-vgA"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -203,6 +210,8 @@
                 <constraint firstItem="VPc-o3-vxm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="uOY-hQ-4Fb"/>
             </constraints>
             <connections>
+                <outlet property="coverButton" destination="g79-YX-K5n" id="DN7-xU-ZaG"/>
+                <outlet property="coverImageView" destination="qIJ-1g-4c8" id="ybg-Jm-iKj"/>
                 <outlet property="expenseLabel" destination="Fj8-Qv-KOW" id="dWv-RP-wjp"/>
                 <outlet property="furnishedLabel" destination="xlu-Ej-c4T" id="4ri-F7-6Qd"/>
                 <outlet property="locationLabel" destination="hy7-dq-ykF" id="i1s-Bj-9vL"/>
@@ -216,5 +225,6 @@
     </objects>
     <resources>
         <image name="logo-with-line.png" width="372" height="59"/>
+        <image name="placeholder_gallery.png" width="708" height="429"/>
     </resources>
 </document>
