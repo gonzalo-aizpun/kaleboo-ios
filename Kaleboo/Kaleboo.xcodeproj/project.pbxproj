@@ -28,6 +28,7 @@
 		D7CF75871B18CDC20057D1A3 /* KBNeighborhood.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75861B18CDC20057D1A3 /* KBNeighborhood.m */; };
 		D7CF75901B18E2E30057D1A3 /* KBFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF758F1B18E2E30057D1A3 /* KBFilter.m */; };
 		D7CF75931B18E32D0057D1A3 /* KBFilterValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75921B18E32D0057D1A3 /* KBFilterValue.m */; };
+		D7E68F7E1B199D1D00402812 /* KBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E68F7D1B199D1D00402812 /* KBImage.m */; };
 		D7FB71201B195A7D00B5E5A1 /* KBPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB711F1B195A7D00B5E5A1 /* KBPagerViewController.m */; };
 		D7FB71231B1961B300B5E5A1 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB71221B1961B300B5E5A1 /* SwipeView.m */; };
 		D7FB71261B196CE400B5E5A1 /* ItemDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB71251B196CE400B5E5A1 /* ItemDetail.xib */; };
@@ -84,6 +85,8 @@
 		D7CF758F1B18E2E30057D1A3 /* KBFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBFilter.m; sourceTree = "<group>"; };
 		D7CF75911B18E32D0057D1A3 /* KBFilterValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBFilterValue.h; sourceTree = "<group>"; };
 		D7CF75921B18E32D0057D1A3 /* KBFilterValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBFilterValue.m; sourceTree = "<group>"; };
+		D7E68F7C1B199D1D00402812 /* KBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBImage.h; sourceTree = "<group>"; };
+		D7E68F7D1B199D1D00402812 /* KBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBImage.m; sourceTree = "<group>"; };
 		D7FB711E1B195A7D00B5E5A1 /* KBPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBPagerViewController.h; sourceTree = "<group>"; };
 		D7FB711F1B195A7D00B5E5A1 /* KBPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBPagerViewController.m; sourceTree = "<group>"; };
 		D7FB71211B1961B300B5E5A1 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipeView.h; path = External/SwipeView.h; sourceTree = SOURCE_ROOT; };
@@ -246,6 +249,8 @@
 				D7CF75921B18E32D0057D1A3 /* KBFilterValue.m */,
 				D78D99031B18F4370020E65C /* KBItem.h */,
 				D78D99041B18F4370020E65C /* KBItem.m */,
+				D7E68F7C1B199D1D00402812 /* KBImage.h */,
+				D7E68F7D1B199D1D00402812 /* KBImage.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				D7CF75841B18CD3E0057D1A3 /* KBCity.m in Sources */,
 				D7FB71231B1961B300B5E5A1 /* SwipeView.m in Sources */,
 				D7CF75931B18E32D0057D1A3 /* KBFilterValue.m in Sources */,
+				D7E68F7E1B199D1D00402812 /* KBImage.m in Sources */,
 				D70A16CD1B18A2D500D46A1F /* AppDelegate.m in Sources */,
 				D76DD5FC1B18ACBB0012D5CB /* KBState.m in Sources */,
 				D7FB71201B195A7D00B5E5A1 /* KBPagerViewController.m in Sources */,

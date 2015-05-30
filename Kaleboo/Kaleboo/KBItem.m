@@ -39,6 +39,9 @@
     [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"furnished"
                                                                             toKeyPath:@"furnished"
                                                                           withMapping:[KBFilterValue mapping]]];
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"images"
+                                                                            toKeyPath:@"images"
+                                                                          withMapping:[KBImage mapping]]];
     return mapping;
 }
 

@@ -8,6 +8,7 @@ pod 'RestKit', '~> 0.24'
 pod 'TTRangeSlider', '~> 1.0'
 pod 'KNSemiModalViewController', '~> 0.3'
 pod 'IQDropDownTextField', '~> 1.0'
+pod 'FSImageViewer'
 
 end
 

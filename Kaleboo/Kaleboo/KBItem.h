@@ -11,6 +11,7 @@
 #import <RestKit/RestKit.h>
 
 #import "KBFilterValue.h"
+#import "KBImage.h"
 
 @interface KBItem : NSObject
 
@@ -20,6 +21,8 @@
 @property (nonatomic) NSString * rooms;
 @property (nonatomic) NSString * surface;
 @property (nonatomic) NSString * email;
+
+@property (nonatomic) NSArray * images;
 
 @property (nonatomic) KBFilterValue * state;
 @property (nonatomic) KBFilterValue * city;

@@ -57,6 +57,8 @@
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
     
+    KBItem * item = [self.items objectAtIndex:index];
+
     KBItemDetailView * detailView;
     
     //create new view if no view is available for recycling
@@ -77,12 +79,12 @@
         detailView = (KBItemDetailView *)view;
     }
     
-    KBItem * item = [self.items objectAtIndex:index];
     
     NSString * locationString = [NSString stringWithFormat:@"%@, %@", item.neighborhood.filterValueDescription, item.city.filterValueDescription];
     NSString * rentString = [NSString stringWithFormat:@"CO$ %@", item.price];
     NSString * expenseString = [NSString stringWithFormat:@"CO$ %@", item.expenses];
     // TODO Decimal Separator
+    // TODO Location Encoding
     
     detailView.locationLabel.text = locationString;
     detailView.rentLabel.text = rentString;
