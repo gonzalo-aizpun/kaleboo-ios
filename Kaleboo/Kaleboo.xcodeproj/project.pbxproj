@@ -28,6 +28,8 @@
 		D7CF75871B18CDC20057D1A3 /* KBNeighborhood.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75861B18CDC20057D1A3 /* KBNeighborhood.m */; };
 		D7CF75901B18E2E30057D1A3 /* KBFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF758F1B18E2E30057D1A3 /* KBFilter.m */; };
 		D7CF75931B18E32D0057D1A3 /* KBFilterValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75921B18E32D0057D1A3 /* KBFilterValue.m */; };
+		D7FB71201B195A7D00B5E5A1 /* KBPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB711F1B195A7D00B5E5A1 /* KBPagerViewController.m */; };
+		D7FB71231B1961B300B5E5A1 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB71221B1961B300B5E5A1 /* SwipeView.m */; };
 		D9B606DC81B0E7D3FCDC25A6 /* libPods-Kaleboo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE98A6EAD2250425F20B2F83 /* libPods-Kaleboo.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,10 @@
 		D7CF758F1B18E2E30057D1A3 /* KBFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBFilter.m; sourceTree = "<group>"; };
 		D7CF75911B18E32D0057D1A3 /* KBFilterValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBFilterValue.h; sourceTree = "<group>"; };
 		D7CF75921B18E32D0057D1A3 /* KBFilterValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBFilterValue.m; sourceTree = "<group>"; };
+		D7FB711E1B195A7D00B5E5A1 /* KBPagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBPagerViewController.h; sourceTree = "<group>"; };
+		D7FB711F1B195A7D00B5E5A1 /* KBPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBPagerViewController.m; sourceTree = "<group>"; };
+		D7FB71211B1961B300B5E5A1 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipeView.h; path = External/SwipeView.h; sourceTree = SOURCE_ROOT; };
+		D7FB71221B1961B300B5E5A1 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipeView.m; path = External/SwipeView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 				D76DD5F31B18A6270012D5CB /* DataAccess */,
 				D76DD5F41B18A6370012D5CB /* Presentation */,
 				D76DD5F51B18A6550012D5CB /* PresentationResources */,
+				D7FB71241B1961B800B5E5A1 /* External */,
 				D70A16C71B18A2D500D46A1F /* Supporting Files */,
 			);
 			path = Kaleboo;
@@ -194,6 +201,8 @@
 				D70A16CF1B18A2D500D46A1F /* ViewController.m */,
 				D7CE3F5B1B19239E00F7D978 /* KBHomeViewController.h */,
 				D7CE3F5C1B19239E00F7D978 /* KBHomeViewController.m */,
+				D7FB711E1B195A7D00B5E5A1 /* KBPagerViewController.h */,
+				D7FB711F1B195A7D00B5E5A1 /* KBPagerViewController.m */,
 			);
 			name = Presentation;
 			sourceTree = "<group>";
@@ -231,6 +240,15 @@
 				D78D99041B18F4370020E65C /* KBItem.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		D7FB71241B1961B800B5E5A1 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D7FB71211B1961B300B5E5A1 /* SwipeView.h */,
+				D7FB71221B1961B300B5E5A1 /* SwipeView.m */,
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,9 +398,11 @@
 				D76DD5F21B18A6220012D5CB /* KBApiAccess.m in Sources */,
 				D7CF75901B18E2E30057D1A3 /* KBFilter.m in Sources */,
 				D7CF75841B18CD3E0057D1A3 /* KBCity.m in Sources */,
+				D7FB71231B1961B300B5E5A1 /* SwipeView.m in Sources */,
 				D7CF75931B18E32D0057D1A3 /* KBFilterValue.m in Sources */,
 				D70A16CD1B18A2D500D46A1F /* AppDelegate.m in Sources */,
 				D76DD5FC1B18ACBB0012D5CB /* KBState.m in Sources */,
+				D7FB71201B195A7D00B5E5A1 /* KBPagerViewController.m in Sources */,
 				D70A16CA1B18A2D500D46A1F /* main.m in Sources */,
 				D78D99051B18F4370020E65C /* KBItem.m in Sources */,
 			);
@@ -517,6 +537,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -529,6 +550,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

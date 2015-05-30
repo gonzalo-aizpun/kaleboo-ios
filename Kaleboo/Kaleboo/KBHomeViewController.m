@@ -8,6 +8,8 @@
 
 #import "KBHomeViewController.h"
 
+#import "KBPagerViewController.h"
+
 #import <TTRangeSlider/TTRangeSlider.h>
 #import <IQDropDownTextField/IQDropDownTextField.h>
 
@@ -92,23 +94,29 @@
     KBState * selectedState;
     if (idx != NSNotFound) {
         selectedState = [[[KBApiAccess sharedInstance] locationTree] objectAtIndex:idx];
-    }
-    NSLog(@"STATE: %@ (%@)", selectedState.stateDescription, selectedState.stateId);
-    NSLog(@"ROOMS: %@", self.roomsLabel.text);
-    NSLog(@"PRICE MIN: %f", self.priceSlider.selectedMinimum);
-    NSLog(@"PRICE MAX: %f", self.priceSlider.selectedMaximum);
-    
+    }    
 }
 
-
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    __weak KBHomeViewController * weakSelf = self;
+    NSUInteger idx = [[[KBApiAccess sharedInstance] locationTree] indexOfObjectPassingTest:^BOOL(KBState * obj, NSUInteger idx, BOOL *stop) {
+        __strong KBHomeViewController * strongSelf = weakSelf;
+        return [obj.stateDescription isEqualToString:strongSelf.stateLabel.text];
+    }];
+    
+    KBState * selectedState;
+    if (idx != NSNotFound) {
+        selectedState = [[[KBApiAccess sharedInstance] locationTree] objectAtIndex:idx];
+    }
+    
+    KBPagerViewController * destination = (KBPagerViewController *)[segue destinationViewController];
+    destination.state = selectedState;
+    destination.rooms = [NSNumber numberWithInt:[self.roomsLabel.text intValue]];
+    destination.minPrice = [NSNumber numberWithFloat:self.priceSlider.selectedMinimum];
+    destination.maxPrice = [NSNumber numberWithFloat:self.priceSlider.selectedMaximum];
 }
-*/
 
 @end

@@ -69,6 +69,7 @@
                                         </state>
                                         <connections>
                                             <action selector="searchTapped:" destination="BGH-wt-GhT" eventType="touchUpInside" id="G1d-vi-IhJ"/>
+                                            <segue destination="fYk-Ww-51O" kind="presentation" id="K15-7R-FtK"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bogotá" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wsz-s2-TMX" customClass="IQDropDownTextField">
@@ -268,22 +269,38 @@
             </objects>
             <point key="canvasLocation" x="-790" y="-255"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Pager View Controller-->
+        <scene sceneID="zBx-C9-L4K">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="fYk-Ww-51O" customClass="KBPagerViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="X30-Rv-n0a"/>
+                        <viewControllerLayoutGuide type="bottom" id="kz8-wW-JLa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="2wg-Mv-VgS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOe-XQ-4UO" customClass="SwipeView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vOe-XQ-4UO" firstAttribute="leading" secondItem="2wg-Mv-VgS" secondAttribute="leading" id="CGB-96-4RR"/>
+                            <constraint firstItem="kz8-wW-JLa" firstAttribute="top" secondItem="vOe-XQ-4UO" secondAttribute="bottom" id="Vj4-XG-FV9"/>
+                            <constraint firstAttribute="trailing" secondItem="vOe-XQ-4UO" secondAttribute="trailing" id="Xfn-jh-mmU"/>
+                            <constraint firstItem="vOe-XQ-4UO" firstAttribute="top" secondItem="X30-Rv-n0a" secondAttribute="bottom" constant="-20" id="pj0-2B-4Jx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="swipeView" destination="vOe-XQ-4UO" id="1Pp-Ue-UTe"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tc0-1K-iNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="61" y="-255"/>
         </scene>
     </scenes>
     <resources>
