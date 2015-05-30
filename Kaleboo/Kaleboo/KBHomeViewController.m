@@ -37,8 +37,6 @@
     [self.stateLabel setText:@""];
     [self.roomsLabel setText:@""];
     [self.searchButton setEnabled:NO];
-    
-    // TODO Disable Search Button Until Response Arrives
     // TODO Spinner Untile Response Arrives
     
     __weak KBHomeViewController * weakSelf = self;
