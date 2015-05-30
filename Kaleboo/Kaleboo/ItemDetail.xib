@@ -149,7 +149,24 @@
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o16-Gb-68n">
                             <rect key="frame" x="0.0" y="0.0" width="540" height="169"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g79-YX-K5n">
+                                    <rect key="frame" x="0.0" y="0.0" width="540" height="169"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="openGalleryTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="b2E-cy-YVb"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" red="0.9204639196395874" green="0.32738605141639709" blue="0.083255097270011902" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="g79-YX-K5n" secondAttribute="bottom" id="29a-Px-oHJ"/>
+                                <constraint firstAttribute="trailing" secondItem="g79-YX-K5n" secondAttribute="trailing" id="9NB-tw-DGs"/>
+                                <constraint firstItem="g79-YX-K5n" firstAttribute="top" secondItem="o16-Gb-68n" secondAttribute="top" id="N1i-dC-GBY"/>
+                                <constraint firstItem="g79-YX-K5n" firstAttribute="leading" secondItem="o16-Gb-68n" secondAttribute="leading" id="ZcD-fm-9tP"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.92150187492370605" green="0.92147433757781982" blue="0.92148995399475098" alpha="1" colorSpace="calibratedRGB"/>

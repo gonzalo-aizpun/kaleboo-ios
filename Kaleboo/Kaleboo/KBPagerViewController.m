@@ -8,6 +8,9 @@
 
 #import "KBPagerViewController.h"
 
+#import <FSImageViewer/FSBasicImage.h>
+#import <FSImageViewer/FSBasicImageSource.h>
+
 #import "KBItemDetailView.h"
 
 #import "SwipeView.h"
@@ -21,6 +24,8 @@
 @property (nonatomic, weak) IBOutlet SwipeView * swipeView;
 
 @property (nonatomic) NSArray * items;
+
+@property (nonatomic) KBItem * selectedItem;
 
 @end
 
@@ -57,7 +62,7 @@
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
     
-    KBItem * item = [self.items objectAtIndex:index];
+    self.selectedItem = [self.items objectAtIndex:index];
 
     KBItemDetailView * detailView;
     
@@ -80,24 +85,61 @@
     }
     
     
-    NSString * locationString = [NSString stringWithFormat:@"%@, %@", item.neighborhood.filterValueDescription, item.city.filterValueDescription];
-    NSString * rentString = [NSString stringWithFormat:@"CO$ %@", item.price];
-    NSString * expenseString = [NSString stringWithFormat:@"CO$ %@", item.expenses];
+    NSString * locationString = [NSString stringWithFormat:@"%@, %@", self.selectedItem.neighborhood.filterValueDescription, self.selectedItem.city.filterValueDescription];
+    NSString * rentString = [NSString stringWithFormat:@"CO$ %@", self.selectedItem.price];
+    NSString * expenseString = [NSString stringWithFormat:@"CO$ %@", self.selectedItem.expenses];
     // TODO Decimal Separator
     // TODO Location Encoding
     
     detailView.locationLabel.text = locationString;
     detailView.rentLabel.text = rentString;
-    detailView.surfaceLabel.text = item.surface;
-    detailView.roomsLabel.text = item.rooms;
-    detailView.furnishedLabel.text = ([item.furnished.filterValueId intValue] == 1)?@"NO":@"SI";
-    detailView.propertyTypeLabel.text = item.type.filterValueDescription;
+    detailView.surfaceLabel.text = self.selectedItem.surface;
+    detailView.roomsLabel.text = self.selectedItem.rooms;
+    detailView.furnishedLabel.text = ([self.selectedItem.furnished.filterValueId intValue] == 1)?@"NO":@"SI";
+    detailView.propertyTypeLabel.text = self.selectedItem.type.filterValueDescription;
     detailView.expenseLabel.text = expenseString;
     
     return view;
 }
 
+- (void)openGallery {
+    
+    NSMutableArray * photos = [[NSMutableArray alloc] init];
+    int i = 1;
+    for (KBImage * image in self.selectedItem.images) {
+        NSString * positionString = [NSString stringWithFormat:@"%d / %lu", i, (unsigned long)[self.selectedItem.images count]];
+        FSBasicImage *aPhoto = [[FSBasicImage alloc] initWithImageURL:[NSURL URLWithString:image.imageUrl] name:positionString];
+        [photos addObject:aPhoto];
+        i ++;
+    }
+    FSBasicImageSource *photoSource = [[FSBasicImageSource alloc] initWithImages:photos];
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    toolbar.frame = CGRectMake(0, 20.0, CGRectMaxXEdge, CGRectMaxYEdge);
 
+    [toolbar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [toolbar setShadowImage:[UIImage new] forToolbarPosition:UIToolbarPositionAny];
+    
+    [toolbar setTintColor:[UIColor colorWithRed:0.55 green:0.78 blue:0.3 alpha:1.0]];
+    [toolbar sizeToFit];
+    UIBarButtonItem *buttonflexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                    target:nil action:nil];
+    UIBarButtonItem *buttonDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                target:self action:@selector(toolbarDoneClicked:)];
+    
+    [toolbar setItems:[NSArray arrayWithObjects:buttonDone, buttonflexible, nil]];
+    
+    FSImageViewerViewController *imageViewController = [[FSImageViewerViewController alloc] initWithImageSource:photoSource];
+    [imageViewController.view addSubview:toolbar];
+    
+    //    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:imageViewController];
+    //    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+    [self presentViewController:imageViewController animated:YES completion:nil];
+}
+
+-(void)toolbarDoneClicked:(UIBarButtonItem*)button {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation

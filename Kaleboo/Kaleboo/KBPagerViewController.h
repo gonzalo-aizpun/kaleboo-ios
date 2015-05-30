@@ -17,4 +17,6 @@
 @property (nonatomic) NSNumber * minPrice;
 @property (nonatomic) NSNumber * maxPrice;
 
+- (void)openGallery;
+
 @end

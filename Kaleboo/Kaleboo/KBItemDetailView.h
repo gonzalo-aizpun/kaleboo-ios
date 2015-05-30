@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "KBPagerViewController.h"
+
 @interface KBItemDetailView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
@@ -21,6 +23,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *expenseLabel;
 
-@property (nonatomic) UIViewController * delegate;
+@property (nonatomic) KBPagerViewController * delegate;
 
 @end

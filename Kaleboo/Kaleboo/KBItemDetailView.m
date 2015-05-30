@@ -25,4 +25,8 @@
 - (IBAction)contactActionTapped:(id)sender {
 }
 
+- (IBAction)openGalleryTapped:(id)sender {
+    [self.delegate openGallery];
+}
+
 @end
