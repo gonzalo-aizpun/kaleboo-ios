@@ -82,6 +82,22 @@
 
 
 - (IBAction)searchTapped:(id)sender {
+    
+    __weak KBHomeViewController * weakSelf = self;
+    NSUInteger idx = [[[KBApiAccess sharedInstance] locationTree] indexOfObjectPassingTest:^BOOL(KBState * obj, NSUInteger idx, BOOL *stop) {
+        __strong KBHomeViewController * strongSelf = weakSelf;
+        return [obj.stateDescription isEqualToString:strongSelf.stateLabel.text];
+    }];
+    
+    KBState * selectedState;
+    if (idx != NSNotFound) {
+        selectedState = [[[KBApiAccess sharedInstance] locationTree] objectAtIndex:idx];
+    }
+    NSLog(@"STATE: %@ (%@)", selectedState.stateDescription, selectedState.stateId);
+    NSLog(@"ROOMS: %@", self.roomsLabel.text);
+    NSLog(@"PRICE MIN: %f", self.priceSlider.selectedMinimum);
+    NSLog(@"PRICE MAX: %f", self.priceSlider.selectedMaximum);
+    
 }
 
 
