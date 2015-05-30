@@ -8,6 +8,8 @@
 
 #import "KBPagerViewController.h"
 
+#import "KBItemDetailView.h"
+
 #import "SwipeView.h"
 
 #import "KBApiAccess.h"
@@ -62,21 +64,29 @@
         //don't do anything specific to the index within
         //this `if (view == nil) {...}` statement because the view will be
         //recycled and used with other index values later
-        view = [[UIView alloc] initWithFrame:self.swipeView.bounds];
-        view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        label = [[UILabel alloc] initWithFrame:view.bounds];
-        label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [label.font fontWithSize:50];
-        label.tag = 1;
-        [view addSubview:label];
+        UINib * myNib = [UINib nibWithNibName:@"ItemDetail" bundle:nil];
+        KBItemDetailView * detailView = (KBItemDetailView *)[myNib instantiateWithOwner:self options:nil][0];
+        [detailView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        label = detailView.label;
+        view = detailView;
+        
+//        view = [[UIView alloc] initWithFrame:self.swipeView.bounds];
+//        view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        
+//        label = [[UILabel alloc] initWithFrame:view.bounds];
+//        label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        label.backgroundColor = [UIColor clearColor];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.font = [label.font fontWithSize:50];
+//        label.tag = 1;
+//        [view addSubview:label];
     }
     else
     {
         //get a reference to the label in the recycled view
-        label = (UILabel *)[view viewWithTag:1];
+        label = ((KBItemDetailView *)view).label;
+//        label = (UILabel *)[view viewWithTag:1];
     }
     
     //set background color

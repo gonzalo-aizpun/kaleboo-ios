@@ -30,6 +30,8 @@
 		D7CF75931B18E32D0057D1A3 /* KBFilterValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF75921B18E32D0057D1A3 /* KBFilterValue.m */; };
 		D7FB71201B195A7D00B5E5A1 /* KBPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB711F1B195A7D00B5E5A1 /* KBPagerViewController.m */; };
 		D7FB71231B1961B300B5E5A1 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB71221B1961B300B5E5A1 /* SwipeView.m */; };
+		D7FB71261B196CE400B5E5A1 /* ItemDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB71251B196CE400B5E5A1 /* ItemDetail.xib */; };
+		D7FB71291B196D5B00B5E5A1 /* KBItemDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FB71281B196D5B00B5E5A1 /* KBItemDetailView.m */; };
 		D9B606DC81B0E7D3FCDC25A6 /* libPods-Kaleboo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE98A6EAD2250425F20B2F83 /* libPods-Kaleboo.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,9 @@
 		D7FB711F1B195A7D00B5E5A1 /* KBPagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBPagerViewController.m; sourceTree = "<group>"; };
 		D7FB71211B1961B300B5E5A1 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipeView.h; path = External/SwipeView.h; sourceTree = SOURCE_ROOT; };
 		D7FB71221B1961B300B5E5A1 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipeView.m; path = External/SwipeView.m; sourceTree = SOURCE_ROOT; };
+		D7FB71251B196CE400B5E5A1 /* ItemDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetail.xib; sourceTree = "<group>"; };
+		D7FB71271B196D5B00B5E5A1 /* KBItemDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBItemDetailView.h; sourceTree = "<group>"; };
+		D7FB71281B196D5B00B5E5A1 /* KBItemDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBItemDetailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +208,8 @@
 				D7CE3F5C1B19239E00F7D978 /* KBHomeViewController.m */,
 				D7FB711E1B195A7D00B5E5A1 /* KBPagerViewController.h */,
 				D7FB711F1B195A7D00B5E5A1 /* KBPagerViewController.m */,
+				D7FB71271B196D5B00B5E5A1 /* KBItemDetailView.h */,
+				D7FB71281B196D5B00B5E5A1 /* KBItemDetailView.m */,
 			);
 			name = Presentation;
 			sourceTree = "<group>";
@@ -213,6 +220,7 @@
 				D70A16D11B18A2D500D46A1F /* Main.storyboard */,
 				D70A16D41B18A2D500D46A1F /* Images.xcassets */,
 				D70A16D61B18A2D500D46A1F /* LaunchScreen.xib */,
+				D7FB71251B196CE400B5E5A1 /* ItemDetail.xib */,
 				D7CE3F4F1B191DA200F7D978 /* arrow-left.png */,
 				D7CE3F501B191DA200F7D978 /* arrow-right.png */,
 				D7CE3F511B191DA200F7D978 /* homeicon.png */,
@@ -336,6 +344,7 @@
 				D7CE3F5A1B191DA200F7D978 /* logo-with-line.png in Resources */,
 				D7CE3F551B191DA200F7D978 /* arrow-left.png in Resources */,
 				D70A16D31B18A2D500D46A1F /* Main.storyboard in Resources */,
+				D7FB71261B196CE400B5E5A1 /* ItemDetail.xib in Resources */,
 				D7CE3F581B191DA200F7D978 /* ico-filter.png in Resources */,
 				D70A16D81B18A2D500D46A1F /* LaunchScreen.xib in Resources */,
 				D7CE3F571B191DA200F7D978 /* homeicon.png in Resources */,
@@ -397,6 +406,7 @@
 				D70A16D01B18A2D500D46A1F /* ViewController.m in Sources */,
 				D76DD5F21B18A6220012D5CB /* KBApiAccess.m in Sources */,
 				D7CF75901B18E2E30057D1A3 /* KBFilter.m in Sources */,
+				D7FB71291B196D5B00B5E5A1 /* KBItemDetailView.m in Sources */,
 				D7CF75841B18CD3E0057D1A3 /* KBCity.m in Sources */,
 				D7FB71231B1961B300B5E5A1 /* SwipeView.m in Sources */,
 				D7CF75931B18E32D0057D1A3 /* KBFilterValue.m in Sources */,
