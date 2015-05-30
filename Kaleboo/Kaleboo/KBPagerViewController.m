@@ -14,6 +14,7 @@
 
 #import "KBApiAccess.h"
 #import "KBItem.h"
+#import "KBFilterValue.h"
 
 @interface KBPagerViewController () <SwipeViewDataSource, SwipeViewDelegate>
 
@@ -56,7 +57,7 @@
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
     
-    UILabel *label = nil;
+    KBItemDetailView * detailView;
     
     //create new view if no view is available for recycling
     if (view == nil)
@@ -66,54 +67,32 @@
         //recycled and used with other index values later
         
         UINib * myNib = [UINib nibWithNibName:@"ItemDetail" bundle:nil];
-        KBItemDetailView * detailView = (KBItemDetailView *)[myNib instantiateWithOwner:self options:nil][0];
+        detailView = (KBItemDetailView *)[myNib instantiateWithOwner:self options:nil][0];
         [detailView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        label = detailView.label;
+        [detailView setDelegate:self];
         view = detailView;
-        
-//        view = [[UIView alloc] initWithFrame:self.swipeView.bounds];
-//        view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//        
-//        label = [[UILabel alloc] initWithFrame:view.bounds];
-//        label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//        label.backgroundColor = [UIColor clearColor];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        label.font = [label.font fontWithSize:50];
-//        label.tag = 1;
-//        [view addSubview:label];
     }
     else
     {
-        //get a reference to the label in the recycled view
-        label = ((KBItemDetailView *)view).label;
-//        label = (UILabel *)[view viewWithTag:1];
+        detailView = (KBItemDetailView *)view;
     }
     
-    //set background color
-//    CGFloat red = arc4random() / (CGFloat)INT_MAX;
-//    CGFloat green = arc4random() / (CGFloat)INT_MAX;
-//    CGFloat blue = arc4random() / (CGFloat)INT_MAX;
-//    view.backgroundColor = [UIColor colorWithRed:red
-//                                           green:green
-//                                            blue:blue
-//                                           alpha:1.0];
-    
-    //set item label
-    //remember to always set any properties of your carousel item
-    //views outside of the `if (view == nil) {...}` check otherwise
-    //you'll get weird issues with carousel item content appearing
-    //in the wrong place in the carousel
     KBItem * item = [self.items objectAtIndex:index];
-    label.text = item.itemId;
+    
+    NSString * locationString = [NSString stringWithFormat:@"%@, %@", item.neighborhood.filterValueDescription, item.city.filterValueDescription];
+    NSString * rentString = [NSString stringWithFormat:@"CO$ %@", item.price];
+    NSString * expenseString = [NSString stringWithFormat:@"CO$ %@", item.expenses];
+    // TODO Decimal Separator
+    
+    detailView.locationLabel.text = locationString;
+    detailView.rentLabel.text = rentString;
+    detailView.surfaceLabel.text = item.surface;
+    detailView.roomsLabel.text = item.rooms;
+    detailView.furnishedLabel.text = ([item.furnished.filterValueId intValue] == 1)?@"NO":@"SI";
+    detailView.propertyTypeLabel.text = item.type.filterValueDescription;
+    detailView.expenseLabel.text = expenseString;
     
     return view;
-    
-    
-    
-    
-    
-    
-    
 }
 
 

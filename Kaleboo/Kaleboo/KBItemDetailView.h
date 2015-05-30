@@ -10,6 +10,17 @@
 
 @interface KBItemDetailView : UIView
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rentLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *surfaceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *roomsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *furnishedLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *propertyTypeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *expenseLabel;
+
+@property (nonatomic) UIViewController * delegate;
 
 @end

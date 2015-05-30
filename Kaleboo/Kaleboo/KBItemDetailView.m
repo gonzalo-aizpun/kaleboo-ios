@@ -18,4 +18,11 @@
 }
 */
 
+- (IBAction)homeTapped:(id)sender {
+    [self.delegate dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)contactActionTapped:(id)sender {
+}
+
 @end
