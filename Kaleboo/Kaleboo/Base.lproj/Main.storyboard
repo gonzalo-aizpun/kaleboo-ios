@@ -283,10 +283,10 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOe-XQ-4UO" customClass="SwipeView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.12098470330238342" green="0.13867627084255219" blue="0.13831213116645813" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12098470330238342" green="0.13867627084255219" blue="0.13831213116645813" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vOe-XQ-4UO" firstAttribute="leading" secondItem="2wg-Mv-VgS" secondAttribute="leading" id="CGB-96-4RR"/>
                             <constraint firstItem="kz8-wW-JLa" firstAttribute="top" secondItem="vOe-XQ-4UO" secondAttribute="bottom" id="Vj4-XG-FV9"/>

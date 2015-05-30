@@ -12,32 +12,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPc-o3-vxm">
-                    <rect key="frame" x="30" y="80" width="540" height="470"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiN-Vi-iCi">
-                            <rect key="frame" x="249" y="224" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
+                    <rect key="frame" x="30" y="100" width="540" height="450"/>
                     <color key="backgroundColor" red="0.92150187492370605" green="0.92147433757781982" blue="0.92148995399475098" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="centerY" secondItem="qiN-Vi-iCi" secondAttribute="centerY" id="mKH-de-kOc"/>
-                        <constraint firstAttribute="centerX" secondItem="qiN-Vi-iCi" secondAttribute="centerX" id="z8L-GL-CjC"/>
-                    </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foo-7n-HZ0">
+                    <rect key="frame" x="30" y="30" width="540" height="60"/>
+                    <state key="normal" image="logo-with-line.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.12098470330238342" green="0.13867627084255219" blue="0.13831213116645813" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="VPc-o3-vxm" secondAttribute="trailing" constant="30" id="0p7-ee-rrC"/>
+                <constraint firstItem="foo-7n-HZ0" firstAttribute="trailing" secondItem="VPc-o3-vxm" secondAttribute="trailing" id="6S0-ce-xLe"/>
                 <constraint firstItem="VPc-o3-vxm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="7qD-Cn-7nP"/>
+                <constraint firstItem="foo-7n-HZ0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="KpU-00-RrR"/>
+                <constraint firstItem="foo-7n-HZ0" firstAttribute="leading" secondItem="VPc-o3-vxm" secondAttribute="leading" id="MPL-mh-BMQ"/>
                 <constraint firstAttribute="bottom" secondItem="VPc-o3-vxm" secondAttribute="bottom" constant="50" id="Vhn-fG-Y7O"/>
-                <constraint firstItem="VPc-o3-vxm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="uOY-hQ-4Fb"/>
+                <constraint firstItem="VPc-o3-vxm" firstAttribute="top" secondItem="foo-7n-HZ0" secondAttribute="bottom" constant="10" id="gBG-SI-7r0"/>
+                <constraint firstItem="VPc-o3-vxm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="uOY-hQ-4Fb"/>
             </constraints>
-            <connections>
-                <outlet property="label" destination="qiN-Vi-iCi" id="CxX-bU-wjz"/>
-            </connections>
         </view>
+        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="lP4-QM-9zb">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
     </objects>
+    <resources>
+        <image name="logo-with-line.png" width="372" height="59"/>
+    </resources>
 </document>
