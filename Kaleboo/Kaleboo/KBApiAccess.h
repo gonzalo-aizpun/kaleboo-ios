@@ -10,6 +10,8 @@
 
 @interface KBApiAccess : NSObject
 
++ (instancetype)sharedInstance;
+
 // Success:
 //          NSArray<KBState> | NSArray<KBFilter>
 // Error
@@ -31,5 +33,10 @@
 - (void)filterNumericEqualToValue:(NSNumber *)value forKey:(NSString *)key;
 
 - (void)resetFilters;
+
+
+
+@property (nonatomic) NSArray * locationTree;
+@property (nonatomic) NSArray * filters;
 
 @end

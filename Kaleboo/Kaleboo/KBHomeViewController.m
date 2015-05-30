@@ -11,6 +11,10 @@
 #import <TTRangeSlider/TTRangeSlider.h>
 #import <IQDropDownTextField/IQDropDownTextField.h>
 
+#import "KBApiAccess.h"
+#import "KBState.h"
+#import "KBFilter.h"
+
 @interface KBHomeViewController ()
 
 @property (weak, nonatomic) IBOutlet IQDropDownTextField *stateLabel;
@@ -26,10 +30,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self initializeDropDownLabels];
+    [self.stateLabel setText:@""];
+    [self.roomsLabel setText:@""];
+    
+    __weak KBHomeViewController * weakSelf = self;
+    [[KBApiAccess sharedInstance] fetchInitializationInformationWithSuccess:^(NSArray * states, NSArray * filters) {
+        __strong KBHomeViewController * strongSelf = weakSelf;
+        
+        [strongSelf initializeController];
+        
+    } withFailure:^(NSError * e) {
+        NSLog(@"%@", e);
+    }];
 }
 
-- (void)initializeDropDownLabels {
+- (void)initializeController {
     
     UIToolbar *toolbar = [[UIToolbar alloc] init];
     [toolbar setBarStyle:UIBarStyleBlackTranslucent];
@@ -43,12 +58,19 @@
     [toolbar setItems:[NSArray arrayWithObjects:buttonflexible,buttonDone, nil]];
     
     self.stateLabel.inputAccessoryView = toolbar;
-    self.stateLabel.isOptionalDropDown = NO;
-    self.stateLabel.itemList = [NSArray arrayWithObjects:@"London",@"Johannesburg",@"Moscow",@"Mumbai",@"Tokyo",@"Sydney", nil];
-    
     self.roomsLabel.inputAccessoryView = toolbar;
+    self.stateLabel.isOptionalDropDown = NO;
     self.roomsLabel.isOptionalDropDown = NO;
-    self.roomsLabel.itemList = [NSArray arrayWithObjects:@"London",@"Johannesburg",@"Moscow",@"Mumbai",@"Tokyo",@"Sydney", nil];
+    
+    NSMutableArray * statesNames = [[NSMutableArray alloc] init];
+    
+    [[[KBApiAccess sharedInstance] locationTree] enumerateObjectsUsingBlock:^(KBState * obj, NSUInteger idx, BOOL *stop) {
+        [statesNames addObject:[obj stateDescription]];
+    }];
+    
+    self.stateLabel.itemList = statesNames;
+    
+    self.roomsLabel.itemList = [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", nil];
     
 }
 
@@ -61,17 +83,6 @@
 
 - (IBAction)searchTapped:(id)sender {
 }
-
-
-//- (IBAction)changeStateTapped:(id)sender {
-//    UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeicon"]];
-//    [self presentSemiView:imagev];
-//}
-//
-//- (IBAction)changeRoomsTapped:(id)sender {
-//    UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeicon"]];
-//    [self presentSemiView:imagev];
-//}
 
 
 /*

@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    KBApiAccess * apiAccess = [[KBApiAccess alloc] init];
+    KBApiAccess * apiAccess = [KBApiAccess sharedInstance];
     
     [self testInitializationWithApi:apiAccess];
         NSLog(@"\n\n\n");
