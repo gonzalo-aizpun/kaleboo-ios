@@ -10,10 +10,6 @@
 
 #import <RestKit/RestKit.h>
 
-#import "KBState.h"
-#import "KBFilter.h"
-#import "KBItem.h"
-
 @interface KBApiAccess ()
 
 @property (nonatomic) NSMutableDictionary * appliedFiltersDictionary;
@@ -79,6 +75,39 @@ static NSString * const API_URL = @"http://api.kaleboo.com";
 
 - (void)resetFilters {
     [self.appliedFiltersDictionary removeAllObjects];
+}
+
+#pragma mark - Location Tree
+
+- (KBState *)getStateWithId:(NSNumber *)valueId {
+    for (KBState * state in self.locationTree) {
+        if ([state.stateId isEqualToNumber:valueId]) {
+            return state;
+        }
+    }
+    return nil;
+}
+- (KBCity *)getCityWithId:(NSNumber *)valueId {
+    for (KBState * state in self.locationTree) {
+        for (KBCity * city in state.cities) {
+            if ([city.cityId isEqualToNumber:valueId]) {
+                return city;
+            }
+        }
+    }
+    return nil;
+}
+- (KBNeighborhood *)getNeighborhoodWithId:(NSNumber *)valueId {
+    for (KBState * state in self.locationTree) {
+        for (KBCity * city in state.cities) {
+            for (KBNeighborhood * neighborhood in city.neighborhoods) {
+                if ([neighborhood.neighborhoodId isEqualToNumber:valueId]) {
+                    return neighborhood;
+                }
+            }
+        }
+    }
+    return nil;
 }
 
 #pragma mark - Initialization

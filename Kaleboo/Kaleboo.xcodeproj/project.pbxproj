@@ -18,6 +18,7 @@
 		D76DD5FC1B18ACBB0012D5CB /* KBState.m in Sources */ = {isa = PBXBuildFile; fileRef = D76DD5FB1B18ACBB0012D5CB /* KBState.m */; };
 		D78D99051B18F4370020E65C /* KBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D99041B18F4370020E65C /* KBItem.m */; };
 		D7B1A7761B19AF690093BECB /* placeholder_gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = D7B1A7751B19AF690093BECB /* placeholder_gallery.png */; };
+		D7B1A7781B19CA3C0093BECB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B1A7771B19CA3C0093BECB /* MessageUI.framework */; };
 		D7CE3F551B191DA200F7D978 /* arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CE3F4F1B191DA200F7D978 /* arrow-left.png */; };
 		D7CE3F561B191DA200F7D978 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CE3F501B191DA200F7D978 /* arrow-right.png */; };
 		D7CE3F571B191DA200F7D978 /* homeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CE3F511B191DA200F7D978 /* homeicon.png */; };
@@ -71,6 +72,7 @@
 		D78D99031B18F4370020E65C /* KBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBItem.h; sourceTree = "<group>"; };
 		D78D99041B18F4370020E65C /* KBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBItem.m; sourceTree = "<group>"; };
 		D7B1A7751B19AF690093BECB /* placeholder_gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder_gallery.png; path = Resources/placeholder_gallery.png; sourceTree = SOURCE_ROOT; };
+		D7B1A7771B19CA3C0093BECB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D7CE3F4F1B191DA200F7D978 /* arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-left.png"; path = "Resources/arrow-left.png"; sourceTree = SOURCE_ROOT; };
 		D7CE3F501B191DA200F7D978 /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-right.png"; path = "Resources/arrow-right.png"; sourceTree = SOURCE_ROOT; };
 		D7CE3F511B191DA200F7D978 /* homeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeicon.png; path = Resources/homeicon.png; sourceTree = SOURCE_ROOT; };
@@ -103,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B1A7781B19CA3C0093BECB /* MessageUI.framework in Frameworks */,
 				D9B606DC81B0E7D3FCDC25A6 /* libPods-Kaleboo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +123,7 @@
 		C5ACEEB1B39F7FA873B63712 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7B1A7771B19CA3C0093BECB /* MessageUI.framework */,
 				CE98A6EAD2250425F20B2F83 /* libPods-Kaleboo.a */,
 			);
 			name = Frameworks;

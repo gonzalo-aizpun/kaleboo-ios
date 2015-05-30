@@ -85,8 +85,9 @@
         detailView = (KBItemDetailView *)view;
     }
     
-    
-    NSString * locationString = [NSString stringWithFormat:@"%@, %@", self.selectedItem.neighborhood.filterValueDescription, self.selectedItem.city.filterValueDescription];
+    KBNeighborhood * itemNeighborhood = [[KBApiAccess sharedInstance] getNeighborhoodWithId:self.selectedItem.neighborhood.filterValueId];
+    KBCity * itemCity = [[KBApiAccess sharedInstance] getCityWithId:self.selectedItem.city.filterValueId];
+    NSString * locationString = [NSString stringWithFormat:@"%@, %@", itemNeighborhood.neighborhoodDescription, itemCity.cityDescription];
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -117,6 +118,10 @@
     }
     
     return view;
+}
+
+- (NSString *)getPublisherEmail {
+    return self.selectedItem.email;
 }
 
 - (void)openGallery {

@@ -8,6 +8,14 @@
 
 #import "KBItemDetailView.h"
 
+#import <MessageUI/MessageUI.h>
+
+@interface KBItemDetailView () <MFMailComposeViewControllerDelegate>
+
+@property (nonatomic) MFMailComposeViewController * mailComposer;
+
+@end
+
 @implementation KBItemDetailView
 
 /*
@@ -22,11 +30,29 @@
     [self.delegate dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)contactActionTapped:(id)sender {
-}
-
 - (IBAction)openGalleryTapped:(id)sender {
     [self.delegate openGallery];
+}
+
+- (IBAction)contactActionTapped:(id)sender {
+    if ([MFMailComposeViewController canSendMail]) {
+        self.mailComposer = [[MFMailComposeViewController alloc] init];
+        self.mailComposer.mailComposeDelegate = self;
+        
+        [self.mailComposer setSubject:@"Contacto desde OLX"];
+        [self.mailComposer setMessageBody:@"Hola, me interesa tu propiedad!" isHTML:NO];
+        [self.mailComposer setToRecipients:@[[self.delegate getPublisherEmail]]];
+        
+        if (self.mailComposer) {
+            [self.delegate presentViewController:self.mailComposer animated:YES completion:nil];
+        }
+    }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+         didFinishWithResult:(MFMailComposeResult)result
+                       error:(NSError *)error {
+    [self.delegate dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

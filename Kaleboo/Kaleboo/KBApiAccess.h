@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "KBState.h"
+#import "KBFilter.h"
+#import "KBItem.h"
+
 @interface KBApiAccess : NSObject
 
 + (instancetype)sharedInstance;
@@ -38,5 +42,9 @@
 
 @property (nonatomic) NSArray * locationTree;
 @property (nonatomic) NSArray * filters;
+
+- (KBState *)getStateWithId:(NSNumber *)valueId;
+- (KBCity *)getCityWithId:(NSNumber *)valueId;
+- (KBNeighborhood *)getNeighborhoodWithId:(NSNumber *)valueId;
 
 @end

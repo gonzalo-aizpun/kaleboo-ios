@@ -18,5 +18,6 @@
 @property (nonatomic) NSNumber * maxPrice;
 
 - (void)openGallery;
+- (NSString *)getPublisherEmail;
 
 @end
