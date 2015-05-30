@@ -17,7 +17,7 @@
 
 @property (nonatomic, weak) IBOutlet SwipeView * swipeView;
 
-@property (nonatomic) NSMutableArray * items;
+@property (nonatomic) NSArray * items;
 
 @end
 
@@ -25,15 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    NSLog(@"STATE: %@ (%@)", self.state.stateDescription, self.state.stateId);
-    NSLog(@"ROOMS: %@", self.rooms);
-    NSLog(@"PRICE MIN: %@", self.minPrice);
-    NSLog(@"PRICE MAX: %@", self.maxPrice);
-    /*
     [[KBApiAccess sharedInstance] resetFilters];
-    [[KBApiAccess sharedInstance] filterComboWithValue:[self.state.stateId stringValue] forKey:@"state"];
+    [[KBApiAccess sharedInstance] filterComboWithValue:[self.state.stateId stringValue] forKey:@"id_state"];
     [[KBApiAccess sharedInstance] filterNumericEqualToValue:self.rooms forKey:@"rooms"];
     [[KBApiAccess sharedInstance] filterNumericBiggerThanValue:self.minPrice forKey:@"price"];
     [[KBApiAccess sharedInstance] filterNumericSmallerThanValue:self.maxPrice forKey:@"price"];
@@ -42,31 +36,14 @@
     [[KBApiAccess sharedInstance] fetchItemsWithSuccess:^(NSArray * items) {
         __strong KBPagerViewController * strongSelf = weakSelf;
         strongSelf.items = items;
-        
-        int i = 0;
-        for (KBItem * item in items) {
-            NSLog(@"%d>> %@", i, item.email);
-            i ++;
-        }
+        [strongSelf.swipeView reloadData];
     } withFailure:^(NSError * e) {
-        NSLog(@"%@", e);
+        NSLog(@"%@", e);    //TODO
     }];
-    */
-    
-    self.items = [NSMutableArray array];
-    for (int i = 0; i < 100; i++)
-    {
-        [self.items addObject:@(i)];
-    }
     
     self.swipeView.pagingEnabled = YES;
     [self.swipeView setDelegate:self];
     [self.swipeView setDataSource:self];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - SwipeViewDataSource
@@ -76,7 +53,6 @@
 }
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
-    
     
     UILabel *label = nil;
     
@@ -117,7 +93,8 @@
     //views outside of the `if (view == nil) {...}` check otherwise
     //you'll get weird issues with carousel item content appearing
     //in the wrong place in the carousel
-    label.text = [_items[index] stringValue];
+    KBItem * item = [self.items objectAtIndex:index];
+    label.text = item.itemId;
     
     return view;
     

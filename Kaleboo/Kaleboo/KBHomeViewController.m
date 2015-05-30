@@ -35,6 +35,9 @@
     [self.stateLabel setText:@""];
     [self.roomsLabel setText:@""];
     
+    // TODO Disable Search Button Until Response Arrives
+    // TODO Spinner Untile Response Arrives
+    
     __weak KBHomeViewController * weakSelf = self;
     [[KBApiAccess sharedInstance] fetchInitializationInformationWithSuccess:^(NSArray * states, NSArray * filters) {
         __strong KBHomeViewController * strongSelf = weakSelf;
@@ -42,7 +45,7 @@
         [strongSelf initializeController];
         
     } withFailure:^(NSError * e) {
-        NSLog(@"%@", e);
+        NSLog(@"%@", e);    // TODO
     }];
 }
 
