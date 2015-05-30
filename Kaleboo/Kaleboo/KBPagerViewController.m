@@ -87,9 +87,17 @@
     
     
     NSString * locationString = [NSString stringWithFormat:@"%@, %@", self.selectedItem.neighborhood.filterValueDescription, self.selectedItem.city.filterValueDescription];
-    NSString * rentString = [NSString stringWithFormat:@"CO$ %@", self.selectedItem.price];
-    NSString * expenseString = [NSString stringWithFormat:@"CO$ %@", self.selectedItem.expenses];
-    // TODO Decimal Separator
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setGroupingSeparator:@"."];
+    [formatter setGroupingSize:3];
+    [formatter setUsesGroupingSeparator:YES];
+    NSNumber * rentNumber = [NSNumber numberWithInteger:[self.selectedItem.price integerValue]];
+    NSNumber * expenseNumber = [NSNumber numberWithInteger:[self.selectedItem.expenses integerValue]];
+    NSString * rentString = [NSString stringWithFormat:@"CO$ %@", [formatter stringFromNumber:rentNumber]];
+    NSString * expenseString = [NSString stringWithFormat:@"CO$ %@", [formatter stringFromNumber:expenseNumber]];
+    
     // TODO Location Encoding
     
     detailView.locationLabel.text = locationString;

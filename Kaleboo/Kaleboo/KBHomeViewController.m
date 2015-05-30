@@ -37,7 +37,6 @@
     [self.stateLabel setText:@""];
     [self.roomsLabel setText:@""];
     [self.searchButton setEnabled:NO];
-    // TODO Spinner Untile Response Arrives
     
     __weak KBHomeViewController * weakSelf = self;
     [[KBApiAccess sharedInstance] fetchInitializationInformationWithSuccess:^(NSArray * states, NSArray * filters) {
