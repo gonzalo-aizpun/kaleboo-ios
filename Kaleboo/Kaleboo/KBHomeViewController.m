@@ -24,6 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet TTRangeSlider * priceSlider;
 
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+
 @end
 
 @implementation KBHomeViewController
@@ -34,6 +36,7 @@
     
     [self.stateLabel setText:@""];
     [self.roomsLabel setText:@""];
+    [self.searchButton setEnabled:NO];
     
     // TODO Disable Search Button Until Response Arrives
     // TODO Spinner Untile Response Arrives
@@ -77,6 +80,7 @@
     
     self.roomsLabel.itemList = [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", nil];
     
+    [self.searchButton setEnabled:YES];
 }
 
 -(void)toolbarDoneClicked:(UIBarButtonItem*)button {
