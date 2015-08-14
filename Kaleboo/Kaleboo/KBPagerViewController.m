@@ -11,6 +11,7 @@
 #import <FSImageViewer/FSBasicImage.h>
 #import <FSImageViewer/FSBasicImageSource.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #import "KBItemDetailView.h"
 
@@ -41,13 +42,18 @@
     [[KBApiAccess sharedInstance] filterNumericBiggerThanValue:self.minPrice forKey:@"price"];
     [[KBApiAccess sharedInstance] filterNumericSmallerThanValue:self.maxPrice forKey:@"price"];
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     __weak KBPagerViewController * weakSelf = self;
     [[KBApiAccess sharedInstance] fetchItemsWithSuccess:^(NSArray * items) {
         __strong KBPagerViewController * strongSelf = weakSelf;
         strongSelf.items = items;
         [strongSelf.swipeView reloadData];
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     } withFailure:^(NSError * e) {
         NSLog(@"%@", e);    //TODO
+        __strong KBPagerViewController * strongSelf = weakSelf;
+        [MBProgressHUD hideHUDForView:strongSelf.view animated:YES];
     }];
     
     self.swipeView.pagingEnabled = YES;

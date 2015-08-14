@@ -10,6 +10,7 @@ pod 'KNSemiModalViewController', '~> 0.3'
 pod 'IQDropDownTextField', '~> 1.0'
 pod 'FSImageViewer'
 pod 'SDWebImage', '~> 3.7'
+pod 'MBProgressHUD', '~> 0.9'
 
 end
 
